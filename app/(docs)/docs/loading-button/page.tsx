@@ -1,0 +1,91 @@
+import React from "react";
+import {
+  PageSubTitle,
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import LoadingButtonDemo from "@/app/(docs)/docs/loading-button/loading-button-demo";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import {
+  Reference,
+  ReferenceBorder,
+} from "@/app/(docs)/docs/components/reference";
+import LoadingButtonUsage from "@/app/(docs)/docs/loading-button/loading-button-usage";
+import Usage from "@/app/(docs)/docs/components/usage";
+import LoadingButtonAsChild from "@/app/(docs)/docs/loading-button/loading-button-as-child";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Loading Button",
+  description:
+    "A shadcn/ui button with a built-in loading spinner state. A free React and Next.js component built with Radix UI and Tailwind CSS.",
+  keywords: [
+    "loading button",
+    "button with spinner",
+    "React loading button",
+    "async button",
+    "Next.js button",
+    "button loading state",
+    "spinner button",
+    "disabled button",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/loading-button",
+});
+
+const LoadingButtonPage = () => {
+  return (
+    <SEOWrapper
+      componentName="Loading Button"
+      description="A shadcn/ui button with a built-in loading spinner state."
+      url="https://ui.lavahq.in/docs/loading-button"
+      keywords={[
+        "loading button",
+        "button with spinner",
+        "React loading button",
+        "async button",
+        "Next.js button",
+        "button loading state",
+        "spinner button",
+        "disabled button",
+      ]}
+    >
+      <PageTemplate
+      title="Loading Button"
+      description="A shadcn/ui button with a built-in loading spinner state."
+    >
+      <ReferenceBorder>
+        <Reference href="https://www.radix-ui.com/themes/docs/components/button" />
+        <Reference href="https://ui.shadcn.com/docs/components/button" />
+      </ReferenceBorder>
+
+      <PreviewCodeCard
+        path="app/(docs)/docs/loading-button/loading-button-demo.tsx"
+        cli="@lava/loading-button-demo"
+      
+        installScript="npm i class-variance-authority @radix-ui/react-slot"
+        installCodePath="components/ui/loading-button.tsx"
+      >
+        <LoadingButtonDemo />
+      </PreviewCodeCard>
+
+      <PageSubTitle>Usage</PageSubTitle>
+      <Usage
+        path="app/(docs)/docs/loading-button/loading-button-usage.tsx"
+        cli="@lava/loading-button-usage"
+      >
+        <LoadingButtonUsage />
+      </Usage>
+      <Usage
+        title="asChild"
+        path="app/(docs)/docs/loading-button/loading-button-as-child.tsx"
+        cli="@lava/loading-button-as-child"
+      >
+        <LoadingButtonAsChild />
+      </Usage>
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default LoadingButtonPage;

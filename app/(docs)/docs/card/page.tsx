@@ -1,0 +1,71 @@
+import React from "react";
+
+import { PageSubTitle, PageTemplate } from "../components/page-template";
+import { Steppers } from "@/components/ui/steppers";
+
+import CardCollection from "@/components/lavaui/cards";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Card",
+  description:
+    "A set of pre-designed cards for login, signup, pricing, and dashboards. Free React and Next.js components built with Tailwind CSS and shadcn/ui.",
+  keywords: [
+    "React card",
+    "Next.js card",
+    "card component",
+    "shadcn card",
+    "login card",
+    "signup card",
+    "pricing card",
+    "dashboard card",
+    "UI card component",
+    "React card designs",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/card",
+});
+
+const page = () => {
+  return (
+    <SEOWrapper
+      componentName="Card"
+      description="A set of pre-designed cards for login, signup, pricing, and dashboards."
+      url="https://ui.lavahq.in/docs/card"
+      keywords={[
+        "React card",
+        "Next.js card",
+        "card component",
+        "shadcn card",
+        "login card",
+        "signup card",
+        "pricing card",
+        "dashboard card",
+        "UI card component",
+        "React card designs",
+      ]}
+    >
+      <div>
+        <PageTemplate
+          title="Card"
+          description="A set of pre-designed cards for login, signup, pricing, and dashboards."
+        >
+          <PageSubTitle>Installation</PageSubTitle>
+          <Steppers
+            withInstall
+            codePath="components/lavaui/cards.tsx"
+            installScript="npx shadcn@latest add card"
+            withEnd
+          />
+          <PageSubTitle>Usage</PageSubTitle>
+          <div className="mt-12">
+            <CardCollection />
+          </div>
+        </PageTemplate>
+      </div>
+    </SEOWrapper>
+  );
+};
+
+export default page;

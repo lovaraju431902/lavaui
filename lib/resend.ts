@@ -1,0 +1,224 @@
+import { Resend } from 'resend';
+
+let resendClient: Resend | null = null;
+function getResend() {
+  if (!resendClient) {
+    resendClient = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resendClient;
+}
+
+function escapeHtml(str: string) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+export async function sendWelcomeNewsletterEmail(email: string, unsubscribeToken: string) {
+  try {
+    const unsubscribeUrl = `https://ui.lavahq.in/unsubscribe?token=${unsubscribeToken}&email=${encodeURIComponent(email)}`;
+
+    const { data, error } = await getResend().emails.send({
+      from: 'Lava UI <noreply@lavahq.in>',
+      to: [email],
+      subject: 'Welcome to Lava UI — You\'re in!',
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a;">
+          <div style="margin-bottom: 32px;">
+            <strong style="font-size: 18px;">Lava UI</strong>
+          </div>
+
+          <h1 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">
+            Thanks for subscribing!
+          </h1>
+
+          <p style="font-size: 15px; line-height: 1.6; color: #444;">
+            You'll be the first to know about new components, templates, and updates from Lava UI.
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.6; color: #444;">
+            Here's what you can explore right now:
+          </p>
+
+          <ul style="font-size: 15px; line-height: 1.8; color: #444; padding-left: 20px;">
+            <li><a href="https://ui.lavahq.in/docs" style="color: #000; font-weight: 500;">Browse 250+ free components</a></li>
+            <li><a href="https://ui.lavahq.in/pro" style="color: #000; font-weight: 500;">Check out Pro templates</a></li>
+            <li><a href="https://ui.lavahq.in/blog" style="color: #000; font-weight: 500;">Read our engineering blog</a></li>
+          </ul>
+
+          <p style="font-size: 15px; line-height: 1.6; color: #444; margin-top: 24px;">
+            Welcome aboard,<br/>
+            Arihant — Lava UI
+          </p>
+
+          <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 32px 0;" />
+
+          <p style="font-size: 12px; color: #999; line-height: 1.5;">
+            You received this because you subscribed at ui.lavahq.in.<br/>
+            <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a>
+          </p>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error('Failed to send welcome email:', error);
+      throw error;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Error in sendWelcomeNewsletterEmail:', err);
+    throw err;
+  }
+}
+
+interface PurchaseEmailProps {
+  email: string;
+  githubUsername: string;
+  templateName: string;
+  githubRepo: string;
+}
+
+export async function sendPurchaseEmail({
+  email,
+  githubUsername,
+  templateName,
+  githubRepo,
+}: PurchaseEmailProps) {
+  try {
+    const escapedTemplate = escapeHtml(templateName);
+    const escapedGithub = escapeHtml(githubUsername);
+
+    const { data, error } = await getResend().emails.send({
+      from: 'Lava UI <noreply@lavahq.in>',
+      to: [email],
+      subject: `Welcome to ${escapedTemplate} - Access Granted!`,
+      html: `
+        <div>
+          <h1>Thank you for purchasing ${escapedTemplate}!</h1>
+          <p>We've successfully processed your payment.</p>
+          <p>We've sent an invitation to your GitHub account <strong>@${escapedGithub}</strong> to access the private repository:</p>
+          <p><a href="https://github.com/${githubRepo}">https://github.com/${githubRepo}</a></p>
+          <p><strong>Next steps:</strong></p>
+          <ol>
+            <li>Check your email for the GitHub repository invitation.</li>
+            <li>Accept the invitation.</li>
+            <li>Clone the repository and start building!</li>
+          </ol>
+          <p>If you have any questions or issues, please reply to this email.</p>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error('Failed to send purchase email via Resend:', error);
+      throw error;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Error in sendPurchaseEmail:', err);
+    throw err;
+  }
+}
+
+interface ProWaitlistEmailProps {
+  email: string;
+  githubUsername: string;
+  amountLabel: string;
+}
+
+export async function sendProWaitlistEmail({
+  email,
+  githubUsername,
+  amountLabel,
+}: ProWaitlistEmailProps) {
+  try {
+    const escapedGithub = escapeHtml(githubUsername);
+
+    const { data, error } = await getResend().emails.send({
+      from: 'Lava UI <noreply@lavahq.in>',
+      to: [email],
+      subject: "You're on the Lava Pro waitlist!",
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a;">
+          <div style="margin-bottom: 32px;">
+            <strong style="font-size: 18px;">Lava UI</strong>
+          </div>
+
+          <h1 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">
+            You're on the Pro waitlist!
+          </h1>
+
+          <p style="font-size: 15px; line-height: 1.6; color: #444;">
+            Thanks for reserving your spot on Lava Pro. We received your payment of <strong>${escapeHtml(amountLabel)}</strong>.
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.6; color: #444;">
+            Your GitHub account <strong>@${escapedGithub}</strong> is on file. When Pro launches, you'll get first access to premium templates, pro components, and priority support.
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.6; color: #444;">
+            We'll email you the moment Pro goes live — no extra steps needed.
+          </p>
+
+          <p style="font-size: 15px; line-height: 1.6; color: #444; margin-top: 24px;">
+            — Arihant, Lava UI
+          </p>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error('Failed to send pro waitlist email:', error);
+      throw error;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Error in sendProWaitlistEmail:', err);
+    throw err;
+  }
+}
+
+export async function sendFounderWelcomeEmail(email: string, name: string) {
+  try {
+    const firstName = name ? name.split(' ')[0] : 'there';
+    
+    // We use a verified domain sender, but set the reply-to as the personal inbox
+    // so all replies go directly to the founder's Gmail.
+    const { data, error } = await getResend().emails.send({
+      from: 'Arihant <arihant@lavahq.in>',
+      replyTo: 'jainari1208@gmail.com',
+      to: [email],
+      subject: 'welcome to lava ui / quick question',
+      text: `Hey ${firstName}, 
+
+Arihant here, founder of Lava UI. I just saw you create an account and wanted to personally welcome you. 
+
+I built this project to help developers stop wasting time on repetitive styling and ship beautiful products faster. 
+
+I have a quick question for you, if you don't mind:
+What are you currently building, and what's the biggest challenge slowing down your UI development right now? 
+
+Just hit reply and let me know. I read every single email, and it helps me decide which components to build next.
+
+Happy coding,
+Arihant`,
+    });
+
+    if (error) {
+      console.error('Failed to send founder welcome email:', error);
+      throw error;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Error in sendFounderWelcomeEmail:', err);
+    throw err;
+  }
+}

@@ -1,0 +1,62 @@
+import React from "react";
+import {
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import AnimatedCardDemo from "./animatedcarddemo";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Animated Card",
+  description:
+    "A card that animates on hover to showcase tools, technologies, and features. A free React and Next.js component built with Framer Motion and Tailwind CSS.",
+  keywords: [
+    "animated card",
+    "card component",
+    "React card",
+    "animated UI card",
+    "hover card",
+    "Next.js card",
+    "Framer Motion card",
+    "interactive card",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/animatedcard",
+});
+
+const DualRangeSliderPage = () => {
+  return (
+    <SEOWrapper
+      componentName="Animated Card"
+      description="A card that animates on hover to showcase tools, technologies, and features."
+      url="https://ui.lavahq.in/docs/animatedcard"
+      keywords={[
+        "animated card",
+        "card component",
+        "React card",
+        "animated UI card",
+        "hover card",
+        "Next.js card",
+        "Framer Motion card",
+        "interactive card",
+      ]}
+    >
+      <PageTemplate
+        title="Animated Card"
+        description="A card that animates on hover to showcase tools, technologies, and features."
+      >
+      <PreviewCodeCard
+        path="app/(docs)/docs/animatedcard/animatedcarddemo.tsx"
+        cli="@lava/animated-card"
+        installScript="npm i lucide-react framer-motion"
+        installCodePath="app/(docs)/docs/animatedcard/animatedcard.tsx"
+      >
+        <AnimatedCardDemo />
+      </PreviewCodeCard>
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default DualRangeSliderPage;

@@ -1,0 +1,91 @@
+import React from "react";
+import {
+  PageSubTitle,
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import DualRangeSliderDemo from "@/app/(docs)/docs/dual-range-slider/dual-range-slider-demo";
+import DualRangeSliderCustomLabel from "@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-custom-label";
+import Usage from "@/app/(docs)/docs/components/usage";
+import DualRangeSliderLabelPosition from "@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-label-position";
+import DualRangeSliderSingle from "@/app/(docs)/docs/dual-range-slider/usage/dual-range-slider-single";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Dual Range Slider",
+  description:
+    "A slider with two draggable thumbs for selecting a range of values. A free React and Next.js component built with Radix UI and Tailwind CSS.",
+  keywords: [
+    "dual range slider",
+    "range slider",
+    "React range slider",
+    "Next.js slider",
+    "price slider",
+    "range input",
+    "dual handle slider",
+    "Radix slider",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/dual-range-slider",
+});
+
+const DualRangeSliderPage = () => {
+  return (
+    <SEOWrapper
+      componentName="Dual Range Slider"
+      description="A slider with two draggable thumbs for selecting a range of values."
+      url="https://ui.lavahq.in/docs/dual-range-slider"
+      keywords={[
+        "dual range slider",
+        "range slider",
+        "React range slider",
+        "Next.js slider",
+        "price slider",
+        "range input",
+        "dual handle slider",
+        "Radix slider",
+      ]}
+    >
+      <PageTemplate
+      title="Dual Range Slider"
+      description="A slider with two draggable thumbs for selecting a range of values."
+    >
+      <PreviewCodeCard
+        path="app/(docs)/docs/dual-range-slider/dual-range-slider-demo.tsx"
+        cli="@lava/dual-range-slider-demo"
+      
+        installScript="npm i @radix-ui/react-slider"
+        installCodePath="components/ui/dual-range-slider.tsx"
+      >
+        <DualRangeSliderDemo />
+      </PreviewCodeCard>
+
+      <PageSubTitle>Usage</PageSubTitle>
+      <Usage
+        title="Custom Label"
+        path="app/(docs)/docs/dual-range-slider/usage/dual-range-slider-custom-label.tsx"
+        cli="@lava/dual-range-slider-custom-label"
+      >
+        <DualRangeSliderCustomLabel />
+      </Usage>
+      <Usage
+        title="Label Position"
+        path="app/(docs)/docs/dual-range-slider/usage/dual-range-slider-label-position.tsx"
+        cli="@lava/dual-range-slider-label-position"
+      >
+        <DualRangeSliderLabelPosition />
+      </Usage>
+      <Usage
+        title="Single Slider"
+        path="app/(docs)/docs/dual-range-slider/usage/dual-range-slider-single.tsx"
+        cli="@lava/dual-range-slider-single"
+      >
+        <DualRangeSliderSingle />
+      </Usage>
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default DualRangeSliderPage;

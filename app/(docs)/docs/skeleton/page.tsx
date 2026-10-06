@@ -1,0 +1,73 @@
+import React from "react";
+import {
+  PageSubTitle,
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import Usage from "@/app/(docs)/docs/components/usage";
+import SkeletonDemo from "./skeleton-demo";
+import { SkeletonCard } from "./usage/skeleton-card";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Skeleton",
+  description: "A loading placeholder that shimmer-animates while content is fetching. A free React and Next.js component built with Tailwind CSS.",
+  keywords: [
+    "skeleton loader",
+    "skeleton component",
+    "React skeleton",
+    "loading skeleton",
+    "placeholder component",
+    "Next.js skeleton",
+    "skeleton UI",
+    "content placeholder",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/skeleton",
+});
+
+const SkeletonLoadingPage = () => {
+  return (
+    <SEOWrapper
+      componentName="Skeleton"
+      description="A loading placeholder that shimmer-animates while content is fetching."
+      url="https://ui.lavahq.in/docs/skeleton"
+      keywords={[
+        "skeleton loader",
+        "skeleton component",
+        "React skeleton",
+        "loading skeleton",
+        "placeholder component",
+        "Next.js skeleton",
+        "skeleton UI",
+        "content placeholder",
+      ]}
+    >
+      <PageTemplate
+      title="Skeleton"
+      description="Use to show a placeholder while content is loading."
+    >
+      <PreviewCodeCard
+        path="app/(docs)/docs/skeleton/skeleton-demo.tsx"
+        cli="@lava/skeleton"
+      
+        installCodePath="components/ui/skeleton.tsx"
+      >
+        <SkeletonDemo />
+      </PreviewCodeCard>
+
+      <PageSubTitle>Usage</PageSubTitle>
+      <Usage
+        title="Card"
+        path="app/(docs)/docs//skeleton/usage/skeleton-card.tsx"
+        cli="@lava/skeleton-card"
+      >
+        <SkeletonCard />
+      </Usage>
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default SkeletonLoadingPage;

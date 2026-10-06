@@ -1,0 +1,115 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { auth } from '@/auth'
+import { supabaseAdmin as supabase } from '@/lib/supabase-admin'
+import { createDodoCheckoutSession } from '@/lib/create-dodo-checkout-session'
+
+export async function POST(req: NextRequest) {
+  try {
+    const { templateSlug, githubUsername } = await req.json()
+
+    // Validate inputs
+    if (!templateSlug || !githubUsername) {
+      return NextResponse.json(
+        { error: 'templateSlug and githubUsername are required' },
+        { status: 400 }
+      )
+    }
+
+    // Get logged-in user's email from Auth.js session
+    const session = await auth()
+    if (!session?.user?.email) {
+      return NextResponse.json(
+        { error: 'You must be signed in to purchase' },
+        { status: 401 }
+      )
+    }
+
+    // ── Check if already owned ──
+    const { count: ownedCount } = await supabase
+      .from('orders')
+      .select('id', { count: 'exact', head: true })
+      .eq('email', session.user.email)
+      .eq('template_slug', templateSlug)
+      .eq('status', 'active')
+
+    if (ownedCount && ownedCount > 0) {
+      return NextResponse.json(
+        { error: 'You already own this template' },
+        { status: 400 }
+      )
+    }
+
+    // ── Fetch Template from DB ──
+    // Pull product ID + template details in one query
+    const { data: template, error: tError } = await supabase
+      .from('templates')
+      .select('name, dodo_product_id, github_repo')
+      .eq('slug', templateSlug)
+      .eq('is_published', true)
+      .single()
+
+    if (tError || !template) {
+      return NextResponse.json(
+        { error: 'Template not found or not published' },
+        { status: 404 }
+      )
+    }
+
+    if (!template.dodo_product_id) {
+      return NextResponse.json(
+        { error: 'Template is not available for purchase yet (missing product ID)' },
+        { status: 400 }
+      )
+    }
+
+    // ── Pre-fill & Persist GitHub Username ──
+    const cleanGithub = githubUsername.replace(/^@/, '').trim()
+    const { syncUser } = await import('@/lib/user-sync')
+    syncUser({
+      email:          session.user.email.toLowerCase(),
+      name:           session.user.name,
+      image:          session.user.image,
+      githubUsername: cleanGithub,
+    }).catch(err => console.error('[checkout] syncUser failed:', err))
+
+    // Track checkout initiation in PostHog
+    try {
+      const posthog = (await import('@/lib/posthog-server')).default()
+      if (posthog) {
+        posthog.capture({
+          distinctId: session.user.email,
+          event: 'checkout_initiated',
+          properties: {
+            templateSlug,
+            githubUsername: cleanGithub,
+            email: session.user.email,
+          }
+        })
+        await posthog.shutdown()
+      }
+    } catch (err) {
+      console.error('[checkout] PostHog checkout_initiated failed:', err)
+    }
+
+    const checkoutUrl = await createDodoCheckoutSession({
+      productId: template.dodo_product_id,
+      customer: {
+        email: session.user.email,
+        name: session.user.name ?? session.user.email,
+      },
+      metadata: {
+        type: 'template',
+        templateSlug,
+        githubUsername: cleanGithub,
+        userEmail: session.user.email,
+      },
+    })
+
+    return NextResponse.json({ checkout_url: checkoutUrl })
+  } catch (err) {
+    const message =
+      err instanceof Error ? err.message : 'Failed to create checkout session'
+    console.error('Checkout error:', message, err)
+    return NextResponse.json({ error: message }, { status: 500 })
+  }
+}

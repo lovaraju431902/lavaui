@@ -1,0 +1,104 @@
+import React from "react";
+import {
+  PageSubTitle,
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import FloatingLabelInputDemo from "@/app/(docs)/docs/floating-label-input/floating-label-input-demo";
+import {
+  Reference,
+  ReferenceBorder,
+} from "@/app/(docs)/docs/components/reference";
+import Usage from "@/app/(docs)/docs/components/usage";
+import FloatingLabelInputCustomize from "@/app/(docs)/docs/floating-label-input/usage/floating-label-customize";
+import { InlineCode } from "@/components/ui/inline-code";
+import FloatingLabelInputForm from "@/app/(docs)/docs/floating-label-input/usage/floating-label-input-form";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Floating Label Input",
+  description: "An input whose label floats above the field when focused or filled. A free React and Next.js component built with Tailwind CSS.",
+  keywords: [
+    "floating label input",
+    "material input",
+    "animated input",
+    "React input component",
+    "Next.js input",
+    "form input",
+    "floating label",
+    "material design input",
+    "animated label",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/floating-label-input",
+});
+
+const FloatingLabelPage = () => {
+  const componentUrl = "https://ui.lavahq.in/docs/floating-label-input";
+  const componentName = "Floating Label Input";
+  const componentDescription = "An input whose label floats above the field when focused or filled.";
+  const componentKeywords = [
+    "floating label input",
+    "material input",
+    "animated input",
+    "React input component",
+    "Next.js input",
+    "form input",
+    "floating label",
+    "material design input",
+    "animated label",
+  ];
+
+  return (
+    <SEOWrapper
+      componentName={componentName}
+      description={componentDescription}
+      url={componentUrl}
+      keywords={componentKeywords}
+    >
+      <PageTemplate
+        title="Floating Label Input"
+        description="An input whose label floats above the field when focused or filled."
+      >
+      <ReferenceBorder>
+        <Reference href="https://ui.shadcn.com/docs/components/input" />
+      </ReferenceBorder>
+      <PreviewCodeCard
+        path="app/(docs)/docs/floating-label-input/floating-label-input-demo.tsx"
+        cli="@lava/floating-label-input-demo"
+      
+        installScript="npx shadcn@latest add label input"
+        installCodePath="components/ui/floating-label-input.tsx"
+      >
+        <FloatingLabelInputDemo />
+      </PreviewCodeCard>
+
+      <PageSubTitle>Usage</PageSubTitle>
+      <Usage
+        title="Customize"
+        path="app/(docs)/docs/floating-label-input/usage/floating-label-customize.tsx"
+        cli="@lava/floating-label-customize"
+        description={
+          <p className="text-muted-foreground">
+            You have fully control of the <InlineCode>FloatingLabel</InlineCode>{" "}
+            and the <InlineCode>FloatingInput</InlineCode>
+          </p>
+        }
+      >
+        <FloatingLabelInputCustomize />
+      </Usage>
+
+      <Usage
+        title="Form"
+        path="app/(docs)/docs/floating-label-input/usage/floating-label-input-form.tsx"
+        cli="@lava/floating-label-form"
+      >
+        <FloatingLabelInputForm />
+      </Usage>
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default FloatingLabelPage;

@@ -1,0 +1,65 @@
+import {
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import EventBadge from "./badgedemo";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "3D Event Badge",
+  description:
+    "An interactive 3D event badge rendered with Three.js and React Three Fiber. A free React and Next.js component for events and conferences.",
+  keywords: [
+    "3D badge",
+    "event badge",
+    "Three.js badge",
+    "React Three Fiber",
+    "3D component",
+    "interactive badge",
+    "animated badge",
+    "3D event card",
+    "WebGL badge",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/badge",
+});
+
+const DualRangeSliderPage = () => {
+  return (
+    <SEOWrapper
+      componentName="3D Event Badge"
+      description="An interactive 3D event badge rendered with Three.js and React Three Fiber."
+      url="https://ui.lavahq.in/docs/badge"
+      keywords={[
+        "3D badge",
+        "event badge",
+        "Three.js badge",
+        "React Three Fiber",
+        "3D component",
+        "interactive badge",
+        "animated badge",
+        "3D event card",
+        "WebGL badge",
+      ]}
+    >
+      <PageTemplate
+        title="3D Event Badge"
+        description="An interactive 3D event badge rendered with Three.js and React Three Fiber."
+      >
+      <PreviewCodeCard
+        path="app/(docs)/docs/badge/badgedemo.tsx"
+        cli="@lava/event-badge-3d"
+      
+        installScript="npm install three @react-three/fiber @react-three/drei @react-three/rapier meshline"
+        installCodePath="app/(docs)/docs/badge/badgedemo.tsx"
+      >
+        <EventBadge />
+      </PreviewCodeCard>
+
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default DualRangeSliderPage;

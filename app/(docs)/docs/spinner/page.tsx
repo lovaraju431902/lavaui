@@ -1,0 +1,94 @@
+import React from "react";
+import {
+  PageSubTitle,
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import Usage from "@/app/(docs)/docs/components/usage";
+import SpinnerDemo from "@/app/(docs)/docs/spinner/spinner-demo";
+import SpinnerSize from "@/app/(docs)/docs/spinner/usage/spinner-size";
+import SpinnerWithText from "@/app/(docs)/docs/spinner/usage/spinner-with-text";
+import SpinnerToggle from "@/app/(docs)/docs/spinner/usage/spinner-toggle";
+import { PropsTable } from "@/app/(docs)/docs/components/props-table/props-table";
+import { spinnerProp } from "@/app/(docs)/docs/spinner/spinner-prop";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Spinner",
+  description: "A loading spinner with multiple sizes and variants for async states. A free React and Next.js component built with Tailwind CSS.",
+  keywords: [
+    "spinner component",
+    "loading spinner",
+    "React spinner",
+    "loading indicator",
+    "Next.js spinner",
+    "Tailwind spinner",
+    "animated spinner",
+    "loading state",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/spinner",
+});
+
+const SpinnerPage = () => {
+  return (
+    <SEOWrapper
+      componentName="Spinner"
+      description="A loading spinner with multiple sizes and variants for async states."
+      url="https://ui.lavahq.in/docs/spinner"
+      keywords={[
+        "spinner component",
+        "loading spinner",
+        "React spinner",
+        "loading indicator",
+        "Next.js spinner",
+        "Tailwind spinner",
+        "animated spinner",
+        "loading state",
+      ]}
+    >
+      <PageTemplate
+      title="Spinner"
+      description="A loading spinner with multiple sizes and variants for async states."
+    >
+      <PreviewCodeCard
+        path="app/(docs)/docs/spinner/spinner-demo.tsx"
+        cli="@lava/spinner-demo"
+      
+        installCodePath="components/ui/spinner.tsx"
+      >
+        <SpinnerDemo />
+      </PreviewCodeCard>
+
+      <PageSubTitle>Usage</PageSubTitle>
+      <Usage
+        title="Size"
+        path="app/(docs)/docs//spinner/usage/spinner-size.tsx"
+        cli="@lava/spinner-size"
+      >
+        <SpinnerSize />
+      </Usage>
+      <Usage
+        title="With text and custom style"
+        path="app/(docs)/docs//spinner/usage/spinner-with-text.tsx"
+        cli="@lava/spinner-with-text"
+      >
+        <SpinnerWithText />
+      </Usage>
+
+      <Usage
+        title="Toggle spinner"
+        path="app/(docs)/docs//spinner/usage/spinner-toggle.tsx"
+        cli="@lava/spinner-toggle"
+      >
+        <SpinnerToggle />
+      </Usage>
+
+      <PropsTable props={spinnerProp} />
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default SpinnerPage;

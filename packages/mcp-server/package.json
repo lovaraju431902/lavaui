@@ -1,0 +1,39 @@
+{
+  "name": "@lavaui/mcp",
+  "version": "0.2.0",
+  "description": "MCP server for Lava UI — lets AI assistants browse, search, and install Lava UI components directly into your codebase",
+  "keywords": ["mcp", "lavaui", "components", "ai", "claude", "cursor"],
+  "author": "Aman Jain <aman.044063@tmu.ac.in>",
+  "license": "MIT",
+  "homepage": "https://lavahq.in",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arihantcodes/lavaui"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "lavaui-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.25.42"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}

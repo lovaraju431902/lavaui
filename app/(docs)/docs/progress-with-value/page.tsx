@@ -1,0 +1,89 @@
+import React from "react";
+import {
+  PageSubTitle,
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import Usage from "@/app/(docs)/docs/components/usage";
+import {
+  Reference,
+  ReferenceBorder,
+} from "@/app/(docs)/docs/components/reference";
+import ProgressWithValueDemo from "@/app/(docs)/docs/progress-with-value/progress-with-value-demo";
+import ProgressWithValuePosition from "@/app/(docs)/docs/progress-with-value/usage/progress-with-value-position";
+import ProgressWithValueLabel from "@/app/(docs)/docs/progress-with-value/usage/progress-with-value-label";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Progress With Value",
+  description: "A progress bar that displays the current value. A free React and Next.js component built with Radix UI and Tailwind CSS.",
+  keywords: [
+    "progress bar",
+    "progress component",
+    "React progress",
+    "progress with value",
+    "Next.js progress",
+    "progress indicator",
+    "Radix progress",
+    "upload progress",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/progress-with-value",
+});
+
+const DualRangeSliderPage = () => {
+  return (
+    <SEOWrapper
+      componentName="Progress With Value"
+      description="A progress bar that displays the current value."
+      url="https://ui.lavahq.in/docs/progress-with-value"
+      keywords={[
+        "progress bar",
+        "progress component",
+        "React progress",
+        "progress with value",
+        "Next.js progress",
+        "progress indicator",
+        "Radix progress",
+        "upload progress",
+      ]}
+    >
+      <PageTemplate
+      title="Progress With Value"
+      description="A progress bar that displays the current value."
+    >
+      <ReferenceBorder>
+        <Reference href="https://www.radix-ui.com/themes/docs/components/progress" />
+      </ReferenceBorder>
+      <PreviewCodeCard
+        path="app/(docs)/docs/progress-with-value/progress-with-value-demo.tsx"
+        cli="@lava/progress-with-value"
+      
+        installScript="npm i @radix-ui/react-progress"
+        installCodePath="components/ui/progress-with-value.tsx"
+      >
+        <ProgressWithValueDemo />
+      </PreviewCodeCard>
+
+      <PageSubTitle>Usage</PageSubTitle>
+      <Usage
+        title="Value Position"
+        path="app/(docs)/docs/progress-with-value/usage/progress-with-value-position.tsx"
+        cli="@lava/value-position"
+      >
+        <ProgressWithValuePosition />
+      </Usage>
+      <Usage
+        title="Custom Label"
+        path="app/(docs)/docs/progress-with-value/usage/progress-with-value-label.tsx"
+        cli="@lava/custom-label"
+      >
+        <ProgressWithValueLabel />
+      </Usage>
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default DualRangeSliderPage;

@@ -1,0 +1,204 @@
+import React from "react";
+import {
+  PageSubTitle,
+  PageTemplate,
+} from "@/app/(docs)/docs/components/page-template";
+import PreviewCodeCard from "@/app/(docs)/docs/components/preview-code-card";
+import { Metadata } from "next";
+import { baseMetadata } from "@/app/(docs)/layout-parts/base-metadata";
+import DatetimePickerDemo from "@/app/(docs)/docs/datetime-picker/datetime-picker-demo";
+import Usage from "@/app/(docs)/docs/components/usage";
+import DatetimePickerHourCycle from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-hour-cycle";
+import DatePickerAndTimeInput from "@/app/(docs)/docs/datetime-picker/usage/date-picker-and-time-input";
+import {
+  Reference,
+  ReferenceBorder,
+} from "@/app/(docs)/docs/components/reference";
+import { P } from "@/components/ui/heading-with-anchor";
+import { InlineCode } from "@/components/ui/inline-code";
+import { PropLink } from "@/app/(docs)/docs/components/props-table/prop-link";
+import DatetimePickerForm from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-form";
+import DatetimePickerRef from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-ref";
+import DatetimePickerCalendarSettings from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-calendar-settings";
+import DatetimePickerGranularity from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-granularity";
+import DatetimePickerYearRange from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-year-range";
+import DatetimePickerDisplayFormat from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-display-format";
+import DatetimePickerLocale from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-locale";
+import DatetimePickerDisabled from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-disabled";
+import { PropsTable } from "@/app/(docs)/docs/components/props-table/props-table";
+import { datetimePickerProp } from "@/app/(docs)/docs/datetime-picker/datetime-picker-prop";
+import DatetimePickerPlaceholder from "@/app/(docs)/docs/datetime-picker/usage/datetime-picker-placeholder";
+import YearDropdownDesc from "@/app/(docs)/docs/datetime-picker/year-dropdown-desc";
+import { SEOWrapper } from "@/app/(docs)/docs/components/seo-wrapper";
+
+export const metadata: Metadata = baseMetadata({
+  title: "Datetime Picker",
+  description:
+    "A date and time picker built on shadcn/ui with no extra dependencies. A free React and Next.js component supporting date, time, and datetime selection.",
+  keywords: [
+    "datetime picker",
+    "date picker",
+    "time picker",
+    "React date picker",
+    "Next.js date picker",
+    "calendar component",
+    "date input",
+    "time input",
+    "shadcn date picker",
+  ],
+  canonicalUrl: "https://ui.lavahq.in/docs/datetime-picker",
+});
+
+const DatetimePickerPage = () => {
+  return (
+    <SEOWrapper
+      componentName="Datetime Picker"
+      description="A date and time picker built on shadcn/ui with no extra dependencies."
+      url="https://ui.lavahq.in/docs/datetime-picker"
+      keywords={[
+        "datetime picker",
+        "date picker",
+        "time picker",
+        "React date picker",
+        "Next.js date picker",
+        "calendar component",
+        "date input",
+        "time input",
+        "shadcn date picker",
+      ]}
+    >
+      <PageTemplate
+      title="Datetime Picker"
+      description="A date and time picker built on shadcn/ui with no extra dependencies."
+    >
+      <ReferenceBorder>
+        <Reference href="https://ui.shadcn.com/docs/components/calendar" />
+      </ReferenceBorder>
+
+      <PreviewCodeCard
+        path="app/(docs)/docs/datetime-picker/datetime-picker-demo.tsx"
+        cli="@lava/datetime-picker-demo"
+      
+        installScript="npx shadcn@latest add calendar select input popover"
+        installCodePath="components/ui/datetime-picker.tsx"
+      >
+        <DatetimePickerDemo />
+      </PreviewCodeCard>
+
+      <PageSubTitle>Usage</PageSubTitle>
+      <Usage
+        title="Hour cycle - 12H / 24H"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-hour-cycle.tsx"
+        cli="@lava/datetime-picker-hour-cycle"
+      >
+        <DatetimePickerHourCycle />
+      </Usage>
+      <Usage
+        title="Date picker or Time picker"
+        path="app/(docs)/docs/datetime-picker/usage/date-picker-and-time-input.tsx"
+        cli="@lava/datetime-picker-and-time-input"
+      >
+        <DatePickerAndTimeInput />
+      </Usage>
+
+      <Usage
+        title="Year Dropdown Range"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-year-range.tsx"
+        description={<YearDropdownDesc />}
+        cli="@lava/datetime-picker-year-range"
+      >
+        <DatetimePickerYearRange />
+      </Usage>
+
+      <Usage
+        title="Locale"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-locale.tsx"
+        cli="@lava/datetime-picker-locale"
+        description={
+          <>
+            <P className="text-muted-foreground">
+              Import locale from{" "}
+              <PropLink href="https://date-fns.org/v3.6.0/docs/I18n-Contribution-Guide">
+                <InlineCode>date-fns</InlineCode>
+              </PropLink>
+            </P>
+          </>
+        }
+      >
+        <DatetimePickerLocale />
+      </Usage>
+
+      <Usage
+        title="Week start on Monday, Show week number, Disable outside days"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-calendar-settings.tsx"
+        cli="@lava/datetime-picker-calendar-settings"
+      >
+        <DatetimePickerCalendarSettings />
+      </Usage>
+
+      <Usage
+        title="Display Format"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-display-format.tsx"
+        cli="@lava/datetime-picker-display-format"
+        description={
+          <>
+            <P className="text-muted-foreground">
+              Visit{" "}
+              <PropLink href="https://date-fns.org/v3.6.0/docs/format">
+                <InlineCode>date-fns</InlineCode>
+              </PropLink>{" "}
+              to customize the format.
+            </P>
+          </>
+        }
+      >
+        <DatetimePickerDisplayFormat />
+      </Usage>
+
+      <Usage
+        title="Placeholder"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-placeholder.tsx"
+        cli="@lava/datetime-picker-placeholder"
+      >
+        <DatetimePickerPlaceholder />
+      </Usage>
+
+      <Usage
+        title="Granularity"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-granularity.tsx"
+        cli="@lava/datetime-picker-granularity"
+      >
+        <DatetimePickerGranularity />
+      </Usage>
+
+      <Usage
+        title="Disabled"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-disabled.tsx"
+        cli="@lava/datetime-picker-disabled"
+      >
+        <DatetimePickerDisabled />
+      </Usage>
+
+      <Usage
+        title="Ref"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-ref.tsx"
+        cli="@lava/datetime-picker-ref"
+      > 
+        <DatetimePickerRef />
+      </Usage>
+
+      <Usage
+        title="Form"
+        path="app/(docs)/docs/datetime-picker/usage/datetime-picker-form.tsx"
+        cli="@lava/datetime-picker-form"
+      >
+        <DatetimePickerForm />
+      </Usage>
+
+      <PropsTable props={datetimePickerProp} />
+    </PageTemplate>
+    </SEOWrapper>
+  );
+};
+
+export default DatetimePickerPage;

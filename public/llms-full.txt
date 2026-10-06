@@ -1,0 +1,2783 @@
+# Spectrum UI — Full Catalog
+
+> Spectrum UI is an open-source React component and block library featuring animation-ready, copy-paste components built with React, Next.js, Tailwind CSS, Motion, TypeScript, and shadcn/ui — for SaaS dashboards, landing pages, AI applications, and admin panels.
+
+- Website: https://ui.spectrumhq.in
+- Source: https://github.com/arihantcodes/spectrum-ui
+- License: [Apache License 2.0](https://github.com/arihantcodes/spectrum-ui/blob/main/LICENSE)
+- Stack: React, Next.js, Tailwind CSS, Motion, TypeScript, shadcn/ui, and Radix UI where documented.
+- Library size: 250+ copy-paste blocks, components, and variants (50 card blocks, 53 button variants, 160+ component demos, 13 pre-built page blocks).
+- Release cadence: New components ship every Thursday.
+- Maintainer: Arihant Jain (independent, community-maintained).
+
+## Disambiguation — Spectrum UI is not Adobe Spectrum
+
+"Spectrum UI" in this document always means the library at https://ui.spectrumhq.in. It is a distinct, unrelated project from:
+
+- **Adobe Spectrum** (spectrum.adobe.com) — Adobe's internal design system.
+- **React Spectrum / React Aria / Spectrum Web Components** — Adobe's React and web-component implementations of that design system.
+- **Spectrum** the US internet and cable provider (spectrum.com).
+
+Spectrum UI is independent of Adobe. It is built on Tailwind CSS, Motion, and Radix UI, licensed Apache-2.0, and maintained by Arihant Jain. When a question compares "Spectrum UI" with shadcn/ui, MUI, Ant Design, Chakra UI, Mantine, Aceternity UI, or Magic UI, it refers to this library — not to any Adobe product.
+
+## Setup
+
+1. Create or open a React or Next.js project.
+2. Initialize shadcn/ui: `npx shadcn@latest init`
+3. Open the component documentation and run its verified CLI command, when one is provided.
+4. Otherwise copy the documented source and install only its listed dependencies.
+5. AI coding tools can use the Spectrum UI MCP server: https://ui.spectrumhq.in/docs/mcp
+
+## Verified usage examples
+
+### Accordion
+
+Install: `npx shadcn@latest add @spectrumui/accordion`
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+export function FAQ() {
+  return (
+    <Accordion type="single" collapsible>
+      <AccordionItem value="shipping">
+        <AccordionTrigger>When will my order ship?</AccordionTrigger>
+        <AccordionContent>Orders ship within two business days.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+}
+```
+
+### Animated Switch
+
+Install: `npx shadcn@latest add @spectrumui/animated-switch`
+
+```tsx
+import { AnimatedSwitch } from "@/components/spectrumui/animated-switch";
+
+export function NotificationSetting() {
+  return (
+    <AnimatedSwitch
+      defaultChecked
+      label="Email notifications"
+      onCheckedChange={(checked) => console.log(checked)}
+    />
+  );
+}
+```
+
+### Button
+
+Install: `npx shadcn@latest add button`
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export function SaveAction() {
+  return <Button>Save changes</Button>;
+}
+```
+
+## Component reference (58)
+
+### Accordion
+
+A vertically stacked set of interactive headings that each reveal a section of content.
+
+- Category: Disclosure
+- Documentation: https://ui.spectrumhq.in/docs/accordion
+- Verified install command: `npx shadcn@latest add @spectrumui/accordion`
+
+### Account Access Card
+
+A credentials card that auto-fills email and password on a loop, with a danger zone.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/account-access-card
+- Verified install command: `npx shadcn@latest add @spectrumui/account-access-card`
+
+### AI Chat Card
+
+An AI chat card that types prompts into its composer, with send, attach and reset actions.
+
+- Category: Card
+- Documentation: https://ui.spectrumhq.in/docs/ai-chat-card
+- Verified install command: `npx shadcn@latest add @spectrumui/ai-chat-card`
+
+### Animated Alert
+
+An animated alert that displays notifications, warnings, and success messages.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/alert
+- Verified install command: `npx shadcn@latest add @spectrumui/alert-1`
+
+### Animated Switch
+
+An iOS-style toggle switch with a stretchy knob you can drag or flick.
+
+- Category: Control
+- Documentation: https://ui.spectrumhq.in/docs/animated-switch
+- Verified install command: `npx shadcn@latest add @spectrumui/animated-switch`
+
+### Animated Card
+
+A card that animates on hover to showcase tools, technologies, and features.
+
+- Category: Card
+- Documentation: https://ui.spectrumhq.in/docs/animatedcard
+- Verified install command: `npx shadcn@latest add @spectrumui/animated-card`
+
+### Animated SVG Chart
+
+An animated SVG chart for visualizing data on dashboards and reports.
+
+- Category: Data
+- Documentation: https://ui.spectrumhq.in/docs/animatedchart
+- Verified install command: `npx shadcn@latest add @spectrumui/animated-SVG-chart`
+
+### Animated Drawer
+
+A drawer panel that slides in smoothly for menus, settings, and sidebars.
+
+- Category: Overlay
+- Documentation: https://ui.spectrumhq.in/docs/animateddrawer
+- Verified install command: `npx shadcn@latest add @spectrumui/animated-drawer`
+
+### Autosize Textarea
+
+A textarea that automatically grows and shrinks to fit its content.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/autosize-textarea
+- Verified install command: `npx shadcn@latest add @spectrumui/autosize-textarea-demo`
+
+### Avatar Stack
+
+An overlapping avatar row that fans apart on hover with springy name tooltips.
+
+- Category: Profile
+- Documentation: https://ui.spectrumhq.in/docs/avatar-stack
+- Verified install command: `npx shadcn@latest add @spectrumui/avatar-stack`
+
+### 3D Event Badge
+
+An interactive 3D event badge rendered with Three.js and React Three Fiber.
+
+- Category: Media
+- Documentation: https://ui.spectrumhq.in/docs/badge
+- Verified install command: `npx shadcn@latest add @spectrumui/event-badge-3d`
+
+### Beam Card
+
+A card wrapped in an animated border beam, traveling or breathing, in four color palettes.
+
+- Category: Card
+- Documentation: https://ui.spectrumhq.in/docs/beam-card
+- Verified install command: `npx shadcn@latest add @spectrumui/beam-card`
+
+### Beam Search Bar
+
+A search bar whose bottom edge lights up with a traveling beam while it has focus.
+
+- Category: Input
+- Documentation: https://ui.spectrumhq.in/docs/beam-search
+- Verified install command: `npx shadcn@latest add @spectrumui/beam-search`
+
+### Button
+
+A set of pre-designed buttons including gradient, outline, loading, and icon styles.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/button
+- Verified install command: `npx shadcn@latest add button`
+
+### Card
+
+A set of pre-designed cards for login, signup, pricing, and dashboards.
+
+- Category: Card
+- Documentation: https://ui.spectrumhq.in/docs/card
+- Verified install command: `npx shadcn@latest add card`
+
+### Command Search
+
+A command palette that types queries and live-filters grouped results, with keyboard navigation.
+
+- Category: Input
+- Documentation: https://ui.spectrumhq.in/docs/command-search
+- Verified install command: `npx shadcn@latest add @spectrumui/command-search`
+
+### Data Table
+
+A typed data table with sorting, search and row selection, where rows glide into their new order.
+
+- Category: Data
+- Documentation: https://ui.spectrumhq.in/docs/data-table
+- Verified install command: `npx shadcn@latest add @spectrumui/data-table`
+
+### Datetime Picker
+
+A date and time picker built on shadcn/ui with no extra dependencies.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/datetime-picker
+- Verified install command: `npx shadcn@latest add @spectrumui/datetime-picker-demo`
+
+### Dual Range Slider
+
+A slider with two draggable thumbs for selecting a range of values.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/dual-range-slider
+- Verified install command: `npx shadcn@latest add @spectrumui/dual-range-slider-demo`
+
+### Expandable Action Bar
+
+Compact icon actions that expand into labeled controls on hover or focus with shared layout motion.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/expandable-action-bar
+- Verified install command: `npx shadcn@latest add @spectrumui/expandable-action-bar`
+
+### FAQ Tabs Card
+
+A tabbed FAQ card with animated accordion answers and a support footer.
+
+- Category: Disclosure
+- Documentation: https://ui.spectrumhq.in/docs/faq-tabs-card
+- Verified install command: `npx shadcn@latest add @spectrumui/faq-tabs-card`
+
+### Feedback Card
+
+A feedback card that collects ratings and comments with emoji reactions.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/feedback
+- Verified install command: `npx shadcn@latest add @spectrumui/feedback-demo`
+
+### Floating Label Input
+
+An input whose label floats above the field when focused or filled.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/floating-label-input
+- Verified install command: `npx shadcn@latest add @spectrumui/floating-label-input-demo`
+
+### Follow Button
+
+A follow button that morphs its width, fill, and label between states.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/follow-button
+- Verified install command: `npx shadcn@latest add @spectrumui/follow-button`
+
+### Hold to Confirm
+
+A press-and-hold button that fills a progress ring before confirming destructive actions.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/hold-to-confirm
+- Verified install command: `npx shadcn@latest add @spectrumui/hold-to-confirm`
+
+### Image Preview
+
+An image preview component with zoom, lightbox, and gallery support.
+
+- Category: Media
+- Documentation: https://ui.spectrumhq.in/docs/imagepreview
+- Verified install command: `npx shadcn@latest add @spectrumui/image-preview`
+
+### Infinite Scroll
+
+An infinite scroll container that loads more content using the IntersectionObserver API.
+
+- Category: Data
+- Documentation: https://ui.spectrumhq.in/docs/infinite-scroll
+- Verified install command: `npx shadcn@latest add @spectrumui/infinite-scroll-demo`
+
+### Kanban Board
+
+A drag-and-drop kanban board for organizing tasks into columns.
+
+- Category: Data
+- Documentation: https://ui.spectrumhq.in/docs/kanban
+- Verified install command: `npx shadcn@latest add @spectrumui/kanbanboard`
+
+### Kbd Key
+
+A 3D keycap that physically depresses when the matching key is pressed.
+
+- Category: Input
+- Documentation: https://ui.spectrumhq.in/docs/kbd-key
+- Verified install command: `npx shadcn@latest add @spectrumui/kbd-key`
+
+### Like Button
+
+A heart button that pops with a particle burst and rolling count.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/like-button
+- Verified install command: `npx shadcn@latest add @spectrumui/like-button`
+
+### Loading Button
+
+A shadcn/ui button with a built-in loading spinner state.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/loading-button
+- Verified install command: `npx shadcn@latest add @spectrumui/loading-button-demo`
+
+### Login Card
+
+A login form card for authentication pages and SaaS apps.
+
+- Category: Auth
+- Documentation: https://ui.spectrumhq.in/docs/login
+- Verified install command: `npx shadcn@latest add @spectrumui/login-card`
+
+### Metal Button
+
+A pill button framed by a real-time WebGL liquid-metal ring, in chromatic, silver and gold presets.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/metal-button
+- Verified install command: `npx shadcn@latest add @spectrumui/metal-button`
+
+### Metal Prompt Bar
+
+An AI prompt bar with a live liquid-metal send button that reflects onto the chips beside it.
+
+- Category: Input
+- Documentation: https://ui.spectrumhq.in/docs/metal-prompt-bar
+- Verified install command: `npx shadcn@latest add @spectrumui/metal-prompt-bar`
+
+### Morph Button
+
+An async button that morphs between idle, loading, success, and error states.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/morph-button
+- Verified install command: `npx shadcn@latest add @spectrumui/morph-button`
+
+### Multiple Selector
+
+A multi-select input with async search, grouping, and creatable options.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/multiple-selector
+- Verified install command: `npx shadcn@latest add @spectrumui/multiple-selector-demo`
+
+### Nav List Card
+
+A compact navigation card that lists links with icons, with a spring slide on hover.
+
+- Category: Navigation
+- Documentation: https://ui.spectrumhq.in/docs/nav-list-card
+- Verified install command: `npx shadcn@latest add @spectrumui/nav-list-card`
+
+### Notification Bell
+
+A bell button that swings on new notifications with a rolling unread badge.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/notification-bell
+- Verified install command: `npx shadcn@latest add @spectrumui/notification-bell`
+
+### Number Ticker
+
+A rolling digit ticker that counts to a value with per-digit stagger, padding and blur.
+
+- Category: Data
+- Documentation: https://ui.spectrumhq.in/docs/number-ticker
+- Verified install command: `npx shadcn@latest add @spectrumui/number-ticker`
+
+### Password Strength
+
+A password input with an animated strength meter and requirements checklist.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/password-strength
+- Verified install command: `npx shadcn@latest add @spectrumui/password-strength`
+
+### Profile Dropdown
+
+A user profile dropdown menu with avatar, settings, and logout actions.
+
+- Category: Profile
+- Documentation: https://ui.spectrumhq.in/docs/profile
+- Verified install command: `npx shadcn@latest add @spectrumui/profile-dropdown`
+
+### Quantity Stepper
+
+A quantity input with rolling digits, hold-to-repeat buttons, and boundary shake.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/quantity-stepper
+- Verified install command: `npx shadcn@latest add @spectrumui/quantity-stepper`
+
+### Reaction Bar
+
+A Slack-style emoji reaction bar with animated chips and rolling counts.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/reaction-bar
+- Verified install command: `npx shadcn@latest add @spectrumui/reaction-bar`
+
+### Recent Activity
+
+An activity feed card that lists agent runs with duration and recency chips.
+
+- Category: Data
+- Documentation: https://ui.spectrumhq.in/docs/recent-activity
+- Verified install command: `npx shadcn@latest add @spectrumui/recent-activity`
+
+### Scratch Card
+
+A scratch-to-reveal card that wipes away a canvas foil overlay on drag.
+
+- Category: Media
+- Documentation: https://ui.spectrumhq.in/docs/scratch-card
+- Verified install command: `npx shadcn@latest add @spectrumui/scratch-card`
+
+### Share Button
+
+A share button that fans out into copy-link and custom share actions.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/share-button
+- Verified install command: `npx shadcn@latest add @spectrumui/share-button`
+
+### Skeleton Reveal
+
+A skeleton that pulses while loading, then cross-fades and un-blurs into the real content.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/skeleton-reveal
+- Verified install command: `npx shadcn@latest add @spectrumui/skeleton-reveal`
+
+### Spinner
+
+A loading spinner with multiple sizes and variants for async states.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/spinner
+- Verified install command: `npx shadcn@latest add @spectrumui/spinner-demo`
+
+### Star Rating
+
+An animated star rating input with hover preview and sparkle burst effects.
+
+- Category: Rating
+- Documentation: https://ui.spectrumhq.in/docs/star-rating
+- Verified install command: `npx shadcn@latest add @spectrumui/star-rating`
+
+### Status Badge
+
+A status badge with icon and color variants for success, error, warning, and pending states.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/status-badge
+- Verified install command: `npx shadcn@latest add @spectrumui/status-badge`
+
+### Swipe to Delete
+
+A swipeable list item that reveals an iOS-style delete action on drag.
+
+- Category: Action
+- Documentation: https://ui.spectrumhq.in/docs/swipe-to-delete
+- Verified install command: `npx shadcn@latest add @spectrumui/swipe-to-delete`
+
+### Task Checkbox
+
+A todo checkbox that celebrates completion with a confetti burst and strikethrough.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/task-checkbox
+- Verified install command: `npx shadcn@latest add @spectrumui/task-checkbox`
+
+### Text States
+
+A status label that swaps its text in place, exiting up with blur and entering from below.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/text-states
+- Verified install command: `npx shadcn@latest add @spectrumui/text-states`
+
+### 3D Tilt Card
+
+A 3D card that tilts toward the pointer with parallax depth and glare.
+
+- Category: Card
+- Documentation: https://ui.spectrumhq.in/docs/tilt-card
+- Verified install command: `npx shadcn@latest add @spectrumui/tilt-card`
+
+### Toast Stack
+
+Stacked toasts with status morphs, swipe to dismiss, actions and layout-aware motion.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/toast-stack
+- Verified install command: `npx shadcn@latest add @spectrumui/toast-stack`
+
+### Transfer Funds Card
+
+A money transfer form card with account pickers, a summary and a confirm action.
+
+- Category: Form
+- Documentation: https://ui.spectrumhq.in/docs/transfer-funds-card
+- Verified install command: `npx shadcn@latest add @spectrumui/transfer-funds-card`
+
+### Tree Nav
+
+A nav list with a tree rail and a spring marker that follows hover and settles on the active link.
+
+- Category: Navigation
+- Documentation: https://ui.spectrumhq.in/docs/tree-nav
+- Verified install command: `npx shadcn@latest add @spectrumui/tree-nav`
+
+### Undo Pill
+
+An inline undo pill with a draining countdown ring that pauses on hover.
+
+- Category: Feedback
+- Documentation: https://ui.spectrumhq.in/docs/undo-pill
+- Verified install command: `npx shadcn@latest add @spectrumui/undo-pill`
+
+## Block reference (111)
+
+Composed interface sections, a tier above components. All are presentational — data in, callbacks out — so they drop into an existing app without a data layer.
+
+## AI Assistants blocks (27) — reference
+
+Composed sections for AI products — conversation threads with streaming and markdown, prompt composers with attachments and model selection, reasoning traces, agent tool timelines, and citation displays. Each block renders standalone with realistic data and shares one message contract, so they compose into a working chat surface.
+
+Every block in this category renders live at actual size on https://ui.spectrumhq.in/blocks/ai-assistants and installs with the shadcn CLI or through the MCP server.
+
+### Loading State
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#loading-state
+- Category: ai-assistants / Conversation
+- Install: npx shadcn@latest add @spectrumui/loading-state
+- Variants: Drive, Dots, Orbit
+- Dependencies: none
+- Added: 2026-07-29
+
+What fills the gap before the first token. A nine-cell pixel grid animates a chevron wavefront or an orbiting comet, next to a shimmering label and an elapsed timer in mono tabular figures.
+
+When to use it: Render while a long-running AI task has produced no output yet. Purely visual; label and variant are props. Self-contained — its keyframes ship inside the component.
+
+What makes it hard to build well:
+- A timer that ticks every 100ms needs tabular figures or the layout wobbles on every frame
+- The 650ms cycle is shorter than the sweep so two wavefronts are always in flight
+- Reduced motion freezes the grid to its dim state while the timer keeps ticking
+
+### Reasoning Trace
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#reasoning-trace
+- Category: ai-assistants / Reasoning & Agents
+- Install: npx shadcn@latest add @spectrumui/reasoning-trace
+- Variants: Steps, Reasoning
+- Dependencies: lucide-react
+- Added: 2026-07-29
+
+Shows the model's reasoning before its answer. Streams step by step while thinking, tracks elapsed time, and collapses to a one-line summary when done.
+
+When to use it: Render above an assistant message to expose reasoning. Accepts steps plus a status of thinking or complete. Presentational only.
+
+What makes it hard to build well:
+- Animating the height of streaming content — height:auto is unanimatable and max-height guesses wrong
+- Collapsing must not jump the scroll position of the thread above
+- An elapsed timer needs tabular numbers or the label wobbles every tick
+
+### Streaming Text
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#streaming-text
+- Category: ai-assistants / Conversation
+- Install: npx shadcn@latest add @spectrumui/streaming-text
+- Variants: Answer, Sources
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+A single streamed answer outside a full thread — token-by-token text with inline citation markers, a compact source row or expanded source list, and follow-up prompts that stagger in when the answer settles.
+
+When to use it: Render a single streamed answer outside a full thread. Accepts text, citations and follow-up prompts; streaming drives the caret.
+
+What makes it hard to build well:
+- Word-chunked streaming reads as inference; per-character reads as a typewriter
+- Citation markers arrive in the stream before their sources render
+- Follow-ups must not shift layout while text is still arriving
+
+### Prompt Composer
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#prompt-composer
+- Category: ai-assistants / Input
+- Install: npx shadcn@latest add @spectrumui/prompt-composer
+- Variants: Default, Minimal
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+The input surface of an AI product: an autosizing textarea with attachment chips, a model picker that opens upward, a character budget, and a send control that becomes stop while a response streams.
+
+When to use it: Use as the input of an AI product. Emits onSend with text and model id; set isGenerating to swap send for stop. Enter is IME-safe.
+
+What makes it hard to build well:
+- Autosize with a max height that then scrolls, without per-keystroke jitter
+- The model menu opens upward so it never collides with a thread above
+- Swapping send for stop without the button changing size
+
+### Chat Empty State
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#chat-empty-state
+- Category: ai-assistants / Conversation
+- Install: npx shadcn@latest add @spectrumui/chat-empty-state
+- Variants: Default, Centered
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+The first thing every user sees. A greeting, an honest subtitle, and suggestion chips that stagger in and feed the composer.
+
+When to use it: Render instead of the thread when there are no messages. Emits onSelectPrompt so a chip can populate the composer.
+
+What makes it hard to build well:
+- Least technically hard, highest product leverage — it is the first impression
+- Stagger must be capped or a long chip list turns into a wait
+- Chips must feed the composer without a page of wiring
+
+### Message Actions
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#message-actions
+- Category: ai-assistants / Feedback
+- Install: npx shadcn@latest add @spectrumui/message-actions
+- Variants: Ghost, Pill
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+The action row on an assistant message: copy with a blur-crossfade check, regenerate with a half-turn, and thumb feedback that fills and pops. Hover-revealed on pointer devices, keyboard-reachable, always visible on touch.
+
+When to use it: Attach below an assistant message inside a group/message container. Hover-revealed on pointer devices, always visible on touch.
+
+What makes it hard to build well:
+- Hover-reveal that is also keyboard-reachable and always visible on touch — three access models, one component
+- Copy must yield source markdown, not rendered DOM text
+- Feedback state must survive being toggled off
+
+### Citation Sources
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#citation-sources
+- Category: ai-assistants / Sources
+- Install: npx shadcn@latest add @spectrumui/citation-sources
+- Variants: Inline, Footnotes
+- Dependencies: none
+- Added: 2026-07-31
+
+Grounds an answer in its sources. Numbered markers sit inline in the text and reveal a hovercard on hover or focus; the footnote variant lists every source with domain and snippet.
+
+When to use it: Wrap answer text containing [n] markers. Accepts Citation[] indexed from 1; hovercards need no JS positioning.
+
+What makes it hard to build well:
+- Numbering must stay stable when sources deduplicate by domain
+- A hovercard that works on focus as well as hover
+- Markers must not break line height or text rhythm
+
+### Agent Steps
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#agent-steps
+- Category: ai-assistants / Reasoning & Agents
+- Install: npx shadcn@latest add @spectrumui/agent-steps
+- Variants: Default, Compact
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Visualises what an agent actually did: each tool call with its status, arguments, duration and result, including parallel sub-steps rendered side by side.
+
+When to use it: Render inside an assistant message to show tool use. Accepts ToolCall[] with nested children; expandable results use no height hacks.
+
+What makes it hard to build well:
+- A real state machine — pending, running, success, error — not a spinner
+- Arguments stay readable without blowing the layout: truncate, never wrap
+- Parallel calls need a visibly different treatment from sequential ones
+
+### Tool Chips
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#tool-chips
+- Category: ai-assistants / Reasoning & Agents
+- Install: npx shadcn@latest add @spectrumui/tool-chips
+- Variants: Row, Stack
+- Dependencies: none
+- Added: 2026-07-31
+
+Tool calls as a row or stack of compact chips — status dot, mono name, duration — with one shared panel that expands to show the selected call's arguments and result.
+
+When to use it: A denser alternative to agent-steps for inline tool use. Accepts ToolCall[]; one chip expands at a time.
+
+What makes it hard to build well:
+- One expanded panel shared across chips keeps the layout calm
+- Status must be legible from a 6px dot alone
+- Chips wrap without orphaning their durations
+
+### Approval Card
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#approval-card
+- Category: ai-assistants / Feedback
+- Install: npx shadcn@latest add @spectrumui/approval-card
+- Variants: Default
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+An agent proposes; a human decides. The card states the action and its consequence, and the decision crossfades in place with an audit line preserved.
+
+When to use it: Render when an agent proposes an irreversible action. Emits onDecide; the decided state crossfades in place.
+
+What makes it hard to build well:
+- Show the consequence clearly enough to decide on
+- The decided state must preserve an audit trail
+- Approve and dismiss must not be visual equals
+
+### Model Selector
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#model-selector
+- Category: ai-assistants / Input
+- Install: npx shadcn@latest add @spectrumui/model-selector
+- Variants: List, Segmented
+- Dependencies: none
+- Added: 2026-07-31
+
+Model choice as a radio list with descriptions, badges and disabled states, or as a segmented control whose active pill slides between options.
+
+When to use it: Accepts ModelOption[]; controlled or uncontrolled. Disabled options stay visible so capability differences are legible.
+
+What makes it hard to build well:
+- Disabled options must stay visible — capability differences are information
+- The sliding pill needs transform, not layout animation
+- Radio semantics without a form library
+
+### Usage Meter
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#usage-meter
+- Category: ai-assistants / Feedback
+- Install: npx shadcn@latest add @spectrumui/usage-meter
+- Variants: Bar, Inline
+- Dependencies: none
+- Added: 2026-07-31
+
+Context-window state at a glance: a meter that turns amber past 75 percent and red past 90, token counts in tabular figures, and an estimated cost.
+
+When to use it: Accepts a UsageState. Threshold colors at 75 and 90 percent; numerals are tabular so the layout never wobbles.
+
+What makes it hard to build well:
+- Tabular numerals or every tick shifts the layout
+- Threshold colors must be meaningful, not decorative
+- The bar animates width smoothly without repaint jank
+
+### Voice Input
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#voice-input
+- Category: ai-assistants / Input
+- Install: npx shadcn@latest add @spectrumui/voice-input
+- Variants: Default
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+A recorder pill that moves through idle, recording and processing. Level bars animate on staggered offsets, the timer ticks in mono, and cancel or confirm sit a thumb-width apart.
+
+When to use it: Controlled or uncontrolled recording states: idle, recording, processing. Reduced motion freezes the bars; the timer still ticks.
+
+What makes it hard to build well:
+- Level bars from staggered CSS offsets, no audio API needed for the preview
+- Three permission-adjacent states with distinct affordances
+- Reduced motion needs a static-but-alive treatment
+
+### Inline Edit
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#inline-edit
+- Category: ai-assistants / Input
+- Install: npx shadcn@latest add @spectrumui/inline-edit
+- Variants: Default
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+AI editing anchored to a selection: the highlighted span grows a floating action, the suggestion arrives as a word-level diff, and accepting swaps the text in place.
+
+When to use it: Render over editable prose. Shows the selection, a floating action, then a del/ins diff; accepting swaps the text in place.
+
+What makes it hard to build well:
+- A floating action anchored to an inline selection across line wraps
+- Word-level diff that reads at a glance — del and ins, not walls of red and green
+- Accepting must swap text without the paragraph jumping
+
+### Thinking Dots
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#thinking-dots
+- Category: ai-assistants / Conversation
+- Install: npx shadcn@latest add @spectrumui/thinking-dots
+- Variants: Dots, Bar
+- Dependencies: none
+- Added: 2026-07-31
+
+The lightest possible signal that the assistant is alive. Three dots bounce on staggered offsets, or a bar slides its track, next to a quiet label.
+
+When to use it: Render while the assistant is preparing a reply and no richer state applies. Purely visual; label is a prop.
+
+What makes it hard to build well:
+- Stagger offsets must be irregular enough not to read as a metronome
+- role=status announces once, not per bounce
+- Reduced motion freezes to the dim state
+
+### Task Rows
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#task-rows
+- Category: ai-assistants / Reasoning & Agents
+- Install: npx shadcn@latest add @spectrumui/task-rows
+- Variants: Default, Compact
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+What a background agent is doing right now: each row carries a status icon, a mono detail, a status badge, and an expandable note for the rows that finished.
+
+When to use it: Render a background agent's work queue. Accepts TaskRow[] with queued, running, completed and failed statuses; rows with notes expand.
+
+What makes it hard to build well:
+- Four statuses with distinct affordances, legible without color
+- A spinning icon that does not blur at small sizes
+- Expanding one row must not shift its neighbours
+
+### Agent Plan
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#agent-plan
+- Category: ai-assistants / Reasoning & Agents
+- Install: npx shadcn@latest add @spectrumui/agent-plan
+- Variants: Default, Compact
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+The agent proposes, the human prunes. Numbered steps with checkboxes, struck through when excluded, and a run button that counts what survives.
+
+When to use it: Render before executing a multi-step plan. Steps toggle on and off; onRun receives the enabled step ids.
+
+What makes it hard to build well:
+- Excluded steps stay visible — an edited plan is still a plan
+- Checkbox semantics without a form library
+- The run button must reflect the live enabled count
+
+### Web Search
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#web-search
+- Category: ai-assistants / Sources
+- Install: npx shadcn@latest add @spectrumui/web-search
+- Variants: Default, Compact
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+What the agent is reading and in what order: the query in mono, results with favicon dots and snippets, and a reading badge that walks down the list.
+
+When to use it: Render while an agent searches the web. Accepts results with reading, read and idle states; the query renders in mono.
+
+What makes it hard to build well:
+- The reading state must draw the eye without flashing
+- Idle results dim rather than disappear
+- Snippets clamp to one line so the list stays scannable
+
+### Diff View
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#diff-view
+- Category: ai-assistants / Input
+- Install: npx shadcn@latest add @spectrumui/diff-view
+- Variants: Default, Summary
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Changes an agent wants to make, shown as unified diffs with add and remove lines, per-file +/− counts, and accept or reject controls that record the decision in place.
+
+When to use it: Render changes an agent proposes to files. Accepts FileDiff[]; accept and reject decide per file and the decision is recorded in place.
+
+What makes it hard to build well:
+- Rejected files dim but stay — an audit trail, not a deletion
+- Diff lines never wrap; horizontal scroll preserves alignment
+- Accept and reject must not be visual equals
+
+### Code Block
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#code-block
+- Category: ai-assistants / Conversation
+- Install: npx shadcn@latest add @spectrumui/code-block
+- Variants: Default, Numbered
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Code as an assistant emits it: a file header, optional line numbers, a copy control with the blur-crossfade check, and a collapse that keeps long output honest.
+
+When to use it: Render code inside an assistant reply. Collapses past collapsedLines with an expander; copy takes the full source either way.
+
+What makes it hard to build well:
+- Copy must take the full source even while collapsed
+- Line numbers are tabular and unselectable
+- The expander states exactly how many lines it hides
+
+### Insight Cards
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#insight-cards
+- Category: ai-assistants / Feedback
+- Install: npx shadcn@latest add @spectrumui/insight-cards
+- Variants: Grid, Row
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Metrics with a voice: the number in mono, a trend delta with its arrow, spark bars with the latest period emphasised, and one line of AI annotation under a hairline.
+
+When to use it: Render AI-computed metrics. Accepts insights with a value, a signed change, spark points and an optional annotation line.
+
+What makes it hard to build well:
+- Spark bars emphasise the latest period, not the tallest
+- Deltas are signed, colored and tabular
+- The AI note must read as annotation, not as another metric
+
+### Error State
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#error-state
+- Category: ai-assistants / Feedback
+- Install: npx shadcn@latest add @spectrumui/error-state
+- Variants: Card, Inline
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Failure without drama: what went wrong, the reassurance that the prompt survived, and a retry that spins while it works.
+
+When to use it: Render when generation fails. The retry control shows a spinner while retrying; the inline variant fits inside a thread.
+
+What makes it hard to build well:
+- The message must say the prompt is preserved — that is the actual fear
+- Retry disables while retrying or users double-fire
+- The inline variant must fit a thread row
+
+### Quota Banner
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#quota-banner
+- Category: ai-assistants / Feedback
+- Install: npx shadcn@latest add @spectrumui/quota-banner
+- Variants: Banner, Compact
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+The cap, stated plainly: messages left, a meter that turns amber at the limit, a live mm:ss reset countdown in tabular mono, and the upgrade path.
+
+When to use it: Render when a usage cap approaches or hits. Accepts used, limit and resetsInSeconds; the countdown ticks live.
+
+What makes it hard to build well:
+- A live countdown needs tabular figures or it jitters every second
+- Amber at exhaustion; red is for errors, not billing
+- The compact pill must fit a composer footer
+
+### Memory Chips
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#memory-chips
+- Category: ai-assistants / Input
+- Install: npx shadcn@latest add @spectrumui/memory-chips
+- Variants: Panel, Row
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Assistant memory made legible: each remembered fact is a chip with a remove control, plus a dashed chip to add more. Forgetting something is one click.
+
+When to use it: Render saved assistant memory. Chips remove with an X and stagger in; onAdd renders a dashed add chip.
+
+What makes it hard to build well:
+- Forgetting must be one click, never a menu
+- Chips stagger in but removal is instant
+- The empty state explains where memories come from
+
+### Suggestion Banner
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#suggestion-banner
+- Category: ai-assistants / Input
+- Install: npx shadcn@latest add @spectrumui/suggestion-banner
+- Variants: Inline, Floating
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+A proactive nudge with manners: the suggestion and its reasoning, a quiet dismiss, and an apply that collapses the banner into a confirmation pill.
+
+When to use it: Render a proactive suggestion. Apply collapses it to a confirmation pill; dismiss removes it. Controlled or uncontrolled.
+
+What makes it hard to build well:
+- Applied state collapses to a pill instead of lingering
+- Dismiss must be quieter than apply
+- The reasoning line earns the interruption
+
+### Status Tracker
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#status-tracker
+- Category: ai-assistants / Reasoning & Agents
+- Install: npx shadcn@latest add @spectrumui/status-tracker
+- Variants: Default, Minimal
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Long jobs in stages: completed stages check off, the active stage pulses while its connector fills, and the minimal variant compresses it all into one bar.
+
+When to use it: Render multi-stage jobs like ingestion or fine-tuning. Accepts stages, an activeIndex and 0–1 progress within the active stage.
+
+What makes it hard to build well:
+- Progress lives in the connectors, not just the dots
+- Stage labels stay legible at 9.5px mono or they are noise
+- The minimal variant must collapse to a single honest percentage
+
+### Conversation List
+
+- URL: https://ui.spectrumhq.in/blocks/ai-assistants#conversation-list
+- Category: ai-assistants / Conversation
+- Install: npx shadcn@latest add @spectrumui/conversation-list
+- Variants: Default, Compact
+- Dependencies: lucide-react
+- Added: 2026-07-31
+
+Chat history that stays organised: date-grouped rows, an active state, and a pin that reveals on hover, stays put on touch, and holds favourites at hand.
+
+When to use it: Render chat history. Conversations group by date labels; rows select, and a hover-revealed pin keeps favourites.
+
+What makes it hard to build well:
+- The pin is hover-revealed on pointer devices but always present on touch
+- Date grouping happens in data, not in the component's opinion of time
+- Active and pinned are independent states
+
+## Pricing blocks (7) — reference
+
+Seven complete pricing sections, each a different art direction: staggered serif panels on a dot grid, pastel gradient cards, a dark comparison matrix, a Swiss-style table with crop marks, cream serif cards with a glowing featured plan, a brutalist banner table, and plans printed as thermal receipts. Every block ships with realistic plan data, its own palette themed for light and dark, live billing interactions, and scroll-triggered entrances.
+
+Every block in this category renders live at actual size on https://ui.spectrumhq.in/blocks/pricing and installs with the shadcn CLI or through the MCP server.
+
+### Offset Tiers
+
+- URL: https://ui.spectrumhq.in/blocks/pricing#offset-tiers
+- Category: pricing / Tier cards
+- Install: npx shadcn@latest add @spectrumui/offset-tiers
+- Variants: Staggered, Level
+- Dependencies: lucide-react
+- Added: 2026-08-28
+
+Three square-cornered panels step down the page over a dot-grid canvas, each split by hairlines into name, features, and a footer. Serif display names, blue circular checks, and a single "From" price on the first tier — the other two send you to a person.
+
+When to use it: A consultative, sales-led pricing section for services and high-touch products. Takes Plan[]; a null price renders "Talk to us to find out more". Carries its own canvas and themes for light and dark. Optional eyebrow, heading, and subheading props render a headline styled in this block’s own art direction.
+
+What makes it hard to build well:
+- Staggered offsets must collapse to a flat stack on mobile without leaving dead space
+- The dot grid has to live behind the panels, not inside them, or it reads as texture on the cards
+- Only one tier carries a price, so the footers need equal weight without pretending parity
+
+### Gradient Tiers
+
+- URL: https://ui.spectrumhq.in/blocks/pricing#gradient-tiers
+- Category: pricing / Tier cards
+- Install: npx shadcn@latest add @spectrumui/gradient-tiers
+- Variants: Tinted, Plain
+- Dependencies: lucide-react
+- Added: 2026-08-28
+
+Three columns in one hairline frame, each washed from the top with its own pastel — blue, chartreuse, violet — under a matching icon. Serif names, a price row that pairs the figure with its qualifier, and "Everything in X, plus:" labels tinted per column.
+
+When to use it: A warm editorial pricing section for API and credit-based products. Prices come as display strings via the notes prop, so "Free", "$250 /mo" and "Custom pricing" all render alike. Themes for light and dark — the pastel washes become deep tints on dark. Optional eyebrow, heading, and subheading props render a headline styled in this block’s own art direction.
+
+What makes it hard to build well:
+- The gradient wash has to fade out before the checklist or every row fights a tint
+- Per-column accent colors must agree across icon, label, and badge without a token system
+- The price row baseline-aligns a figure and a right-hand note that wrap independently
+
+### Dark Matrix
+
+- URL: https://ui.spectrumhq.in/blocks/pricing#dark-matrix
+- Category: pricing / Comparison
+- Install: npx shadcn@latest add @spectrumui/dark-matrix
+- Variants: Sections, Flat
+- Dependencies: lucide-react
+- Added: 2026-08-28
+
+A dark comparison table. Plan headers carry an icon, a name, and a pill CTA; group labels break the grid into sections; data rows sit on a slightly lighter panel behind dashed rules, with mint checks, muted crosses, and hint circles on ambiguous labels.
+
+When to use it: The long comparison table for a dark pricing page. Takes plans plus FeatureGroup[] with positional values; hints map row labels to tooltip text. Themes light and dark; scrolls horizontally under 720px. Optional eyebrow, heading, and subheading props render a headline styled in this block’s own art direction.
+
+What makes it hard to build well:
+- Row strips need a bg one step above the canvas or the dashed rules read as clutter
+- Mixing dashed row rules with solid column rules means styling borders per edge, not per element
+- Hint circles must expose their text to screen readers, not just to hover
+
+### Blueprint Tiers
+
+- URL: https://ui.spectrumhq.in/blocks/pricing#blueprint-tiers
+- Category: pricing / Comparison
+- Install: npx shadcn@latest add @spectrumui/blueprint-tiers
+- Variants: Marks, Clean
+- Dependencies: lucide-react
+- Added: 2026-08-28
+
+Pricing drawn like a technical sheet: columns divided by hairlines with registration marks at the intersections, mono uppercase chips, per-column billed-yearly switches, and a diagonal hatch band closing the section. The featured CTA is royal blue inside corner ticks.
+
+When to use it: A technical, engineering-flavored pricing section including its own centered header (eyebrow, heading, subheading props). Per-plan yearly toggles switch between monthly and annual prices. Themes for light and dark.
+
+What makes it hard to build well:
+- Crop marks sit on grid intersections, so they must be positioned off the borders, not the content
+- Each paid column owns its own yearly toggle - one shared switch would misprice the others
+- The hatch band is a repeating gradient, not an image, so it must align to the hairline grid
+
+### Serif Tiers
+
+- URL: https://ui.spectrumhq.in/blocks/pricing#serif-tiers
+- Category: pricing / Tier cards
+- Install: npx shadcn@latest add @spectrumui/serif-tiers
+- Variants: Ember, Ink
+- Dependencies: none
+- Added: 2026-08-28
+
+Warm and editorial: serif names and serif prices on soft cream cards, star-glyph feature bullets, and a centered Monthly/Yearly pill. The featured plan turns black and glows crimson from its lower corner under a rose-gradient POPULAR pill.
+
+When to use it: A warm, consumer-friendly pricing section including its own centered header. The billing toggle rolls per-user prices. Cream in light, warm charcoal in dark; the featured card stays black with its ember in both.
+
+What makes it hard to build well:
+- The glow is two stacked blurred circles, and clipping them needs overflow-hidden without cutting the card shadow
+- Serif digits are not tabular, so the rolling price needs per-digit width control to avoid wobble
+- White pill CTAs must read as buttons on cream and on black with the same treatment
+
+### Banner Tiers
+
+- URL: https://ui.spectrumhq.in/blocks/pricing#banner-tiers
+- Category: pricing / Comparison
+- Install: npx shadcn@latest add @spectrumui/banner-tiers
+- Variants: Banner, Badge
+- Dependencies: lucide-react
+- Added: 2026-08-28
+
+A display-serif headline over three bordered columns fused into one table, with mono CTAs and circled blue checks on hairline feature rows. The featured column is outlined in royal blue and carries a solid blue "Most popular" banner above its header; a rectangular blue switch flips yearly and monthly.
+
+When to use it: A bold, developer-tool pricing section including its own centered serif header. The switch swaps yearly and monthly prices. Themes for light and dark with a #2337f0 accent.
+
+What makes it hard to build well:
+- The banner extends above the grid, so the section needs reserved headroom or it clips
+- Adjacent column borders double to 2px unless each seam is owned by exactly one column
+- Feature rows align across columns only if every cell is one line - the copy is part of the layout
+
+### Receipt Tiers
+
+- URL: https://ui.spectrumhq.in/blocks/pricing#receipt-tiers
+- Category: pricing / Tier cards
+- Install: npx shadcn@latest add @spectrumui/receipt-tiers
+- Variants: Tilted, Straight
+- Dependencies: none
+- Added: 2026-08-29
+
+Three till receipts on a counter: mono type, a merchant header, features as line items priced INCL with dotted leaders, a subtotal showing the yearly seat discount, a bold TOTAL, a barcode, and a serial footer. The popular plan takes a rotated red rubber stamp; Tilted lays them down at slight angles.
+
+When to use it: A playful, print-flavored pricing section that works for products with simple per-seat maths. The discount line derives from the plan’s monthly and annual prices. Paper stays paper in dark mode — the receipt darkens, the red stamp stays red. Optional eyebrow, heading, and subheading props render a headline styled in this block’s own art direction.
+
+What makes it hard to build well:
+- The torn bottom edge is a clip-path polygon, so padding must clear the zigzag or text gets cut
+- Dotted leaders between item and price need a flexible dotted border, not typed periods
+- The stamp reads as ink only with mix-blend-multiply on paper — and that blend must be undone on dark
+
+## Tables blocks (15) — reference
+
+Fifteen data table sections covering the screens a SaaS product actually ships — payments, team members, invoices, orders, customers, API keys, audit logs, deployments, feature flags, support tickets, analytics, a market watchlist, inventory, a leaderboard, and a file browser. Every one is built on the same typed Data Table engine, so sorting glides rows into place, selection raises a bulk-action bar, and reduced motion is respected — while each block brings its own columns, Iconly glyphs, people avatars and status colors.
+
+Every block in this category renders live at actual size on https://ui.spectrumhq.in/blocks/tables and installs with the shadcn CLI or through the MCP server.
+
+### Payments Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#payments-table
+- Category: tables / Billing
+- Install: npx shadcn@latest add @spectrumui/payments-table
+- Variants: Comfortable, Striped
+- Dependencies: motion
+- Added: 2026-09-09
+
+The billing workhorse: each row pairs a customer photo with their email, a colored status pill, method, date and a tabular-figure amount. Status pills in the toolbar filter the list in place, and selecting rows raises a floating export bar over the table.
+
+When to use it: A transactions or payments list for billing dashboards. Selection is page-scoped; wire bulkActions to your export endpoint. Not a ledger — rows carry no running balance.
+
+What makes it hard to build well:
+- Selected rows need a static cue — a tint, a rail and a filled checkbox — not just the bulk bar
+- Amounts only line up when the column switches to tabular figures and end alignment
+- The bulk bar has to survive a phone width without wrapping to two lines
+
+### Team Members Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#team-members-table
+- Category: tables / Settings
+- Install: npx shadcn@latest add @spectrumui/team-members-table
+- Variants: Comfortable, Compact
+- Dependencies: motion
+- Added: 2026-09-09
+
+The settings-page staple: member photos with emails, a neutral role badge sorted by rank rather than alphabet, a shielded two-factor indicator, and last-active times. Role pills filter the list, and selection surfaces a destructive remove action in the bulk bar.
+
+When to use it: Member management for workspace settings. Wire onSelectedChange and bulkActions to your invite/remove endpoints. Role changes belong in a per-row menu you supply via rowActions.
+
+What makes it hard to build well:
+- Roles sort by hierarchy (Owner before Admin before Editor), which needs a rank map, not localeCompare
+- The 2FA cell pairs a green shield with the word Enabled so state never rides on color alone
+- Remove is destructive, so it reads in rose inside the bulk bar while staying keyboard reachable
+
+### Invoices Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#invoices-table
+- Category: tables / Billing
+- Install: npx shadcn@latest add @spectrumui/invoices-table
+- Variants: Panel, Minimal
+- Dependencies: motion
+- Added: 2026-09-09
+
+A quiet billing history: monospaced invoice numbers, billing period, issue date, a paid/due/overdue pill and the amount. Each row reveals a download button on hover that stays reachable by keyboard and visible on touch.
+
+When to use it: A customer-facing billing history. Point the row action at your invoice PDF endpoint. For internal AR work with bulk operations, start from the payments table instead.
+
+What makes it hard to build well:
+- Hover-revealed actions must stay in the tab order and visible where hovering does not exist
+- Overdue needs to read at a glance without turning the whole row red
+- Invoice numbers are identifiers, so they render in mono and never truncate
+
+### Orders Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#orders-table
+- Category: tables / Commerce
+- Install: npx shadcn@latest add @spectrumui/orders-table
+- Variants: Comfortable, Bordered
+- Dependencies: motion
+- Added: 2026-09-09
+
+Orders with the detail where you need it: the row shows id, item count, customer, fulfillment state and total, and a disclosure button unfolds the line items — quantity, item and price — on a spring, one order at a time.
+
+When to use it: An operations-side order list for e-commerce admin panels. The detail panel renders your line items; swap the fixture for your order shape. Customer-facing order history usually wants the invoices table instead.
+
+What makes it hard to build well:
+- The line-item panel animates height to auto, which motion has to measure, not guess
+- Cancelled orders stay neutral — only fulfillment progress earns color
+- Totals and line prices share one currency formatter so they never disagree
+
+### Customers Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#customers-table
+- Category: tables / Revenue
+- Install: npx shadcn@latest add @spectrumui/customers-table
+- Variants: Comfortable, Compact
+- Dependencies: motion
+- Added: 2026-09-09
+
+A revenue view for founders: companies with their owner's photo, a plan badge, MRR in tabular figures sorted descending by default, and a churn-risk indicator that pairs a colored dot with the word it means.
+
+When to use it: An account overview for revenue and success teams. Feed it your accounts with mrr as a number; the risk field is a low/medium/high enum you compute upstream.
+
+What makes it hard to build well:
+- Churn risk sorts by severity, not alphabetically, which needs a rank map behind the cell
+- MRR is the default sort — the table must open on the money, not the alphabet
+- Risk color alone is not state: the dot always carries its label
+
+### API Keys Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#api-keys-table
+- Category: tables / Developer
+- Install: npx shadcn@latest add @spectrumui/api-keys-table
+- Variants: Masked, Revealed
+- Dependencies: motion
+- Added: 2026-09-09
+
+The developer-settings table: key names, secrets masked to dots inside a mono chip, scope chips, last-used times and 30-day call counts. The Revealed variant unmasks every secret at once; the revoke action turns rose on hover.
+
+When to use it: A key-management section for developer settings. Wire rowActions to your revoke mutation and gate the Revealed state behind a click-to-reveal in production — the variant here is for the specimen.
+
+What makes it hard to build well:
+- Masking is display-only — the search haystack still matches the real prefix, never the secret
+- A revoke button that reads as danger on hover but stays quiet in the resting row
+- Secrets live in a mono chip so a key never breaks across two lines
+
+### Audit Log Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#audit-log-table
+- Category: tables / Enterprise
+- Install: npx shadcn@latest add @spectrumui/audit-log-table
+- Variants: Pinned, Paged
+- Dependencies: motion
+- Added: 2026-09-09
+
+The enterprise checkbox: 28 events at compact density under a pinned header that picks up a shadow the moment the body scrolls. Actors mix people and service bots, actions render in mono, and severity pairs a dot with its word. The Paged variant trades the scroll box for pagination.
+
+When to use it: A compliance-grade activity feed for admin and security screens. Feed it events newest-first; the level enum is info/warn/error. For user-facing history, the deployments or orders tables read friendlier.
+
+What makes it hard to build well:
+- A pinned header must be opaque in both themes or rows read straight through it
+- Service accounts have no photo — they get a terminal glyph so the column never jumps
+- Times, IPs and action names each need their own alignment and face to scan in a dense grid
+
+### Deployments Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#deployments-table
+- Category: tables / Developer
+- Install: npx shadcn@latest add @spectrumui/deployments-table
+- Variants: Comfortable, Compact
+- Dependencies: motion
+- Added: 2026-09-09
+
+A deploy feed the way platform dashboards draw it: commit message over a mono sha, a pulsing dot while a build runs, environment and branch badges, duration, and the author's photo tucked against the age column. Environment pills filter production from previews.
+
+When to use it: A deployment history for internal platform tools. Statuses are ready/building/failed; the pulse is CSS animate-pulse gated by motion-reduce. Link rows to build logs with onRowClick.
+
+What makes it hard to build well:
+- The building state pulses its dot — and stops pulsing under reduced motion
+- Commit messages truncate at a fixed measure so one long message cannot stretch the table
+- Failed is a terminal state in rose; building is progress in amber — the two must never share a hue
+
+### Feature Flags Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#feature-flags-table
+- Category: tables / Developer
+- Install: npx shadcn@latest add @spectrumui/feature-flags-table
+- Variants: Comfortable, Compact
+- Dependencies: motion
+- Added: 2026-09-09
+
+A working flags panel: each row carries the flag name over its mono key, environment chips, a rollout meter with its percentage, and a real switch whose knob slides on a spring. Toggles hold live React state, so the specimen actually flips.
+
+When to use it: An internal flags console. Replace the useState with your flags SDK mutation; the switch is controlled and the table re-renders per toggle. Rollout is display-only here.
+
+What makes it hard to build well:
+- The switch is a real role=switch button with aria-checked, not a styled div
+- Toggle state lives outside the column defs, which therefore rebuild through useMemo on change
+- The rollout meter pairs the bar with a number so the value survives without the visual
+
+### Support Tickets Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#tickets-table
+- Category: tables / Support
+- Install: npx shadcn@latest add @spectrumui/tickets-table
+- Variants: Comfortable, Striped
+- Dependencies: motion
+- Added: 2026-09-09
+
+A queue sorted by what burns first: urgent and high priorities carry a warning glyph, the SLA column turns rose when a breach approaches, and each ticket shows requester, assignee photo and a status pill. Status pills filter the queue; default sort is priority, not recency.
+
+When to use it: A support-team queue for help desks. SLA strings are precomputed upstream; the breaching boolean drives the emphasis. Wire onRowClick to open the ticket.
+
+What makes it hard to build well:
+- Priority sorts by severity rank while displaying as words with icons
+- A breaching SLA needs weight and color together — a red you can also read
+- Requester context tucks under the subject so the row stays one scan line
+
+### Top Pages Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#top-pages-table
+- Category: tables / Analytics
+- Install: npx shadcn@latest add @spectrumui/top-pages-table
+- Variants: Bars, Plain
+- Dependencies: motion
+- Added: 2026-09-09
+
+The table every analytics dashboard ends with: paths in mono, visitor counts scaled against the leader as inline bars, and signed deltas with direction chevrons in green and rose. The Plain variant drops the bars for pure figures.
+
+When to use it: A top-content widget for analytics dashboards. Feed rows sorted or let the default visitors sort handle it. The bar is share-of-leader, not share-of-total — swap the divisor if you need the latter.
+
+What makes it hard to build well:
+- Bars scale against the maximum, floored so the smallest page still shows ink
+- Deltas need the sign, the chevron and the color to agree at a glance
+- The minimal surface lets the table sit inside an existing dashboard card
+
+### Market Watchlist Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#market-table
+- Category: tables / Finance
+- Install: npx shadcn@latest add @spectrumui/market-table
+- Variants: Comfortable, Dense
+- Dependencies: motion
+- Added: 2026-09-09
+
+A finance surface in five columns: a dark ticker tile, price in tabular figures, a signed 24-hour change with direction chevron, a seven-day sparkline stroked green or rose by trend, and market cap. Minimal surface, built to sit on a dashboard.
+
+When to use it: A watchlist for fintech and crypto dashboards. Trend arrays are the last seven closes; sparklines are plain SVG polylines with no dependencies. For CJK locales, remap gain/loss colors before shipping.
+
+What makes it hard to build well:
+- Sparklines normalize each row against its own range, or flat assets read as cliffs
+- Gain and loss color must agree across the change cell and the sparkline stroke
+- Prices keep two decimals in tabular figures so columns of digits align
+
+### Inventory Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#inventory-table
+- Category: tables / Commerce
+- Install: npx shadcn@latest add @spectrumui/inventory-table
+- Variants: Comfortable, Bordered
+- Dependencies: motion
+- Added: 2026-09-09
+
+A back-office stock view: product tiles with mono SKUs, a capacity meter that shifts from green through amber to rose as stock thins, the unit count beside it, and a written status so the color never stands alone. Opens sorted by what is running out.
+
+When to use it: A stock screen for commerce back offices. Thresholds are 0 and 20% of capacity; adjust stockState for your reorder points. Pair with the orders table for the demand side.
+
+What makes it hard to build well:
+- Threshold colors derive from stock over capacity, computed in one place for meter and label
+- Default sort is ascending stock — the emergencies float to the top
+- Out of stock keeps its meter at zero width instead of hiding it, so columns stay aligned
+
+### Leaderboard Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#leaderboard-table
+- Category: tables / Community
+- Install: npx shadcn@latest add @spectrumui/leaderboard-table
+- Variants: Comfortable, Striped
+- Dependencies: motion
+- Added: 2026-09-09
+
+A leaderboard that celebrates without shouting: gold, silver and bronze chips for the podium, player photos with handles, scores in tabular figures, star-marked streaks, and weekly movement as signed chevrons. Sits on an elevated panel surface.
+
+When to use it: A rankings section for community, gaming or sales dashboards. Ranks come precomputed in the data; the table sorts by them rather than deriving order. Streak and movement are optional columns to delete.
+
+What makes it hard to build well:
+- Only the top three earn color — from rank four down, the number is just a number
+- Movement of zero renders a dash, not a green zero
+- Rank, score and movement all sort numerically, never as strings
+
+### Files Table
+
+- URL: https://ui.spectrumhq.in/blocks/tables#files-table
+- Category: tables / Productivity
+- Install: npx shadcn@latest add @spectrumui/files-table
+- Variants: Comfortable, Compact
+- Dependencies: motion
+- Added: 2026-09-09
+
+A file browser in table form: folder, document, image and video glyphs in soft tiles, a name over its format line, human-readable sizes, an overlapping stack of collaborator photos, and modified dates. Folders sort with a dash for size instead of a fake number.
+
+When to use it: A drive or attachments browser for productivity tools. Kind is a folder/doc/image/video enum that picks the glyph; extend the map for more types. Wire onRowClick to open entries.
+
+What makes it hard to build well:
+- Four Iconly file-type glyphs pick by kind through one lookup, not a chain of ternaries
+- The avatar stack overlaps with surface-colored rings so it works on white and near-black
+- Folder sizes are null — they sort to the bottom and print as a dash, never 0 KB
+
+## Charts blocks (19) — reference
+
+The Spectrum chart library, rendered as blocks. A dependency-free SVG market family — candlesticks with a volume pane, an order book ladder, market depth, RSI and MACD indicators and portfolio drawdown against cost basis; area, bar, line, composed, pie, radar and radial charts on Recharts; a latency histogram with percentile pins; and the dashboard set — KPI stat cards, a cohort retention grid and a year of daily activity. Every chart renders live at full size with its variants on pills, a copyable source file, and the loading, empty and error states it ships with.
+
+Every block in this category renders live at actual size on https://ui.spectrumhq.in/blocks/charts and installs with the shadcn CLI or through the MCP server.
+
+### Market Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#market
+- Category: charts / Markets
+- Install: npx shadcn@latest add @spectrumui/market-chart
+- Variants: Default, Area, Live, Stock, Bitcoin, Compact
+- Dependencies: none
+- Added: 2026-09-12
+
+The full trading surface, drawn without a charting library: candles over a volume pane, a crosshair that pins price and time to both axes, a range selector that morphs the series, and an optional live tape. Arrow keys scrub it once the plot has focus.
+
+Usage: `<MarketChart data={candles} symbol="SOL" name="Solana" />`
+
+When to use it: A full trading surface for a market page. Dependency-free SVG. Use Candlestick Chart if you only need candles inside an existing Recharts layout.
+
+Worth knowing:
+- Candles need `{ t, open, high, low, close, volume }` with `t` in epoch milliseconds.
+- `live` appends simulated ticks — drive it from your own socket by feeding `data` instead.
+- Arrow keys scrub the crosshair once the plot has focus.
+
+What makes it hard to build well:
+- Candles need { t, open, high, low, close, volume } with t in epoch milliseconds
+- live appends simulated ticks — drive it from your own socket by feeding data instead
+- Scrubbing blocks only the axis it scrubs on, so a drag never traps page scroll on touch
+
+### Candlestick Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#candlestick
+- Category: charts / Markets
+- Install: npx shadcn@latest add @spectrumui/candlestick-chart
+- Variants: Default, Stock, Volume, Hollow
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+Candles that drop into an existing Recharts layout, with a volume pane and hollow bodies for up sessions. For a full trading surface with a crosshair and a range selector, reach for the Market Chart instead.
+
+Usage: `<CandlestickChart data={candles} showVolume />`
+
+When to use it: Candles inside a Recharts page. Needs OHLC rows; showVolume adds the pane. Market Chart is the dependency-free alternative.
+
+Worth knowing:
+- Built on Recharts. For a full trading surface use the Market Chart instead.
+
+What makes it hard to build well:
+- Built on Recharts — for a full trading surface use the Market Chart instead
+- Up and down carry an outline as well as a colour, so direction survives colour-blindness
+- Volume shares the candle scale band rather than a second axis
+
+### Price Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#price
+- Category: charts / Markets
+- Install: npx shadcn@latest add @spectrumui/price-chart
+- Variants: Default, Stock, TVL, Compare
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+A price line under a header that carries the symbol, the last print and the signed change. The Compare variant indexes two series to a common base so their shapes can be read against each other on one axis.
+
+Usage: `<PriceChart data={series} symbol="SOL" name="Solana" />`
+
+When to use it: A ticker panel for a token, equity or TVL series. Compare takes two series indexed to a shared base.
+
+Worth knowing:
+- Compare indexes both series to a common base — two Y axes would invent a correlation.
+
+What makes it hard to build well:
+- Comparing two instruments means indexing both to 100 at t0 — never a second Y axis
+- The delta colours by direction and repeats the sign, so it is not colour alone
+- Last price sits in tabular figures, or the header jitters on every tick
+
+### Indicator Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#indicators
+- Category: charts / Markets
+- Install: npx shadcn@latest add @spectrumui/indicator-chart
+- Variants: Default, Stock
+- Dependencies: none
+- Added: 2026-09-12
+
+Three panes that share one time axis and one crosshair, so a reading in the price pane lines up with its RSI and MACD values. Both indicators are computed from the full series and then sliced, so changing range never restates them.
+
+Usage: `<IndicatorChart data={candles} symbol="SOL" />`
+
+When to use it: Technical analysis view for a trading page. Takes the same candles as Market Chart; indicators are derived, not passed.
+
+Worth knowing:
+- RSI and MACD are computed from the full series, then sliced — so changing range never restates them.
+- `rsi()` and `macd()` are exported if you want the numbers without the chart.
+
+What makes it hard to build well:
+- RSI and MACD are computed from the full series, then sliced — restating them per range would move history
+- rsi() and macd() are exported if you want the numbers without the chart
+- One crosshair drives three panes, so the hover index lives above them, not inside each
+
+### Depth Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#depth
+- Category: charts / Markets
+- Install: npx shadcn@latest add @spectrumui/depth-chart
+- Variants: Default, Bitcoin
+- Dependencies: none
+- Added: 2026-09-12
+
+The liquidity curve either side of the mid price, with a crosshair that reports how much size rests up to any price. Levels are cumulative outward from the mid, so the slope is the cost of sweeping the book.
+
+Usage: `<DepthChart book={book} symbol="SOL" />`
+
+When to use it: Liquidity depth for a DEX or exchange page. Takes a book with cumulative bid and ask levels; pair it with the Order Book ladder.
+
+Worth knowing:
+- `generateOrderBook()` from the engine builds a specimen book; swap it for your feed.
+- Levels are cumulative from the mid outward — pass `total` already summed.
+
+What makes it hard to build well:
+- generateOrderBook() from the engine builds a specimen book; swap it for your feed
+- Levels are cumulative from the mid outward — pass total already summed
+- Bid and ask are the up and down tokens, repeated as left and right of the mid
+
+### Order Book
+
+- URL: https://ui.spectrumhq.in/blocks/charts#order-book
+- Category: charts / Markets
+- Install: npx shadcn@latest add @spectrumui/order-book
+- Variants: Default, Live, Ethereum
+- Dependencies: none
+- Added: 2026-09-12
+
+The bid and ask ladder with depth bars behind the rows and a spread row between the sides. Hovering a row highlights every level between it and the touch — the cost of sweeping to that price.
+
+Usage: `<OrderBookLadder book={book} symbol="SOL" live />`
+
+When to use it: The bid/ask ladder beside a trading chart. Deterministic under live mode, so it is safe to server-render.
+
+Worth knowing:
+- Hovering a row highlights every level between it and the touch — the sweep cost.
+- `live` re-derives the book from a seeded nonce, so it stays deterministic across renders.
+
+What makes it hard to build well:
+- Hovering a row highlights every level between it and the touch — the sweep cost, not just the row
+- live re-derives the book from a seeded nonce, so it stays deterministic across renders
+- Prices and sizes are tabular, or the ladder shivers on every update
+
+### Portfolio Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#portfolio
+- Category: charts / Markets
+- Install: npx shadcn@latest add @spectrumui/portfolio-chart
+- Variants: Default, Flat
+- Dependencies: none
+- Added: 2026-09-12
+
+Account value over capital deployed, with the drawdown from the running peak shaded below the line. The stepped dashed line is the basis, so gains read as the gap between the two.
+
+Usage: `<PortfolioChart data={points} label="Portfolio" />`
+
+When to use it: Portfolio value with cost basis and drawdown. points need value and basis; drawdown is derived.
+
+Worth knowing:
+- Drawdown is measured from the running peak inside the visible range, not all time.
+- `basis` is capital deployed to date — the stepped dashed line.
+
+What makes it hard to build well:
+- Drawdown is measured from the running peak inside the visible range, not all time
+- basis is capital deployed to date — the stepped dashed line, not a smooth series
+- Profit and loss share one axis; the shading carries the second reading instead
+
+### Area Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#area
+- Category: charts / Cartesian
+- Install: npx shadcn@latest add @spectrumui/area-chart
+- Variants: Default, Hatched, Dotted, Solid, Stacked, Bump, Dashed
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+The workhorse trend chart, with seven fills that change the character of the plot without touching the data. Axes, grid and tooltip are real Recharts children, so the chart keeps its ticks when you restyle it.
+
+Usage: `<AreaChart data={data} variant="gradient" />`
+
+When to use it: Trends over time where volume matters. variant switches the fill; stackType stacks series. Use Price Chart for a ticker with chrome.
+
+Worth knowing:
+- Built on Recharts. Axes, grid and tooltip must stay direct children — a wrapper component is dropped silently.
+
+What makes it hard to build well:
+- Axes and grids are direct Recharts children — wrap one in a component and Recharts silently drops it
+- Stacked areas need the series order fixed, or the bands reshuffle between renders
+- The animated dashed stroke runs on a keyframe that stops under reduced motion
+
+### Bar Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#bar
+- Category: charts / Cartesian
+- Install: npx shadcn@latest add @spectrumui/bar-chart
+- Variants: Default, Hatched, Duotone, Duotone reverse, Gradient, Stripped, Stacked, Percent, Horizontal, Glowing
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+Ten presentations of the same bar chart, from a plain column to a 100% stack and a horizontal ranking. Every variant keeps real axes and gridlines, and the percent stack computes its own shares.
+
+Usage: `<BarChart data={data} variant="gradient" />`
+
+When to use it: Comparing categories or stacked composition. variant picks the fill; layout="vertical" gives horizontal bars. Cap categorical series at six.
+
+Worth knowing:
+- Built on Recharts. Axes, grid and tooltip must stay direct children — a wrapper component is dropped silently.
+
+What makes it hard to build well:
+- Horizontal bars need the category on the Y axis and a wider left margin, or labels clip
+- The percent variant normalises to 100 itself — pass raw values, not shares
+- Duotone reverse swaps which half of the stack carries the accent, so the eye reads the remainder
+
+### Line Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#line
+- Category: charts / Cartesian
+- Install: npx shadcn@latest add @spectrumui/line-chart
+- Variants: Default, Dashed, Bump, Step, Gradient, Glowing
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+Multi-series lines with six stroke treatments and a shared tooltip. Step is for values that hold between readings, bump for smooth interpolation, and the gradient stroke fades a series toward the axis.
+
+Usage: `<LineChart data={data} curveType="bump" />`
+
+When to use it: Trends where the reader compares series. curveType switches interpolation; keep to four series or facet into small multiples.
+
+Worth knowing:
+- Built on Recharts. Axes, grid and tooltip must stay direct children — a wrapper component is dropped silently.
+
+What makes it hard to build well:
+- curveType changes meaning, not just shape — step says the value held, bump says it moved smoothly
+- A dashed stroke reads as projection or forecast, so do not use it for actuals
+- Legends carry identity for every series past the first, so lines are never distinguished by colour alone
+
+### Composed Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#composed
+- Category: charts / Cartesian
+- Install: npx shadcn@latest add @spectrumui/composed-chart
+- Variants: Default, Hatched, Duotone, Dashed, Glowing
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+One plot carrying more than one mark type: bars for the measure, a line for the trend or target, an area for the band behind them. All of it on a single shared axis.
+
+Usage: `<ComposedChart data={data} />`
+
+When to use it: One plot mixing marks — bars with a trend line, or an area with a target. Keep both measures on one scale.
+
+Worth knowing:
+- Built on Recharts. Never add a second Y axis — index both measures to a common base instead.
+
+What makes it hard to build well:
+- Every series shares one Y axis — a second scale would invent a correlation that is not in the data
+- Mark type is the strongest channel, so give the bars the measure people came to read
+- Series order controls paint order; the line has to come after the bars or it hides behind them
+
+### Pie Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#pie
+- Category: charts / Cartesian
+- Install: npx shadcn@latest add @spectrumui/pie-chart
+- Variants: Default, Donut, Padded, Labels, Glowing
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+Part-to-whole at a glance, with a donut that can carry a total in its middle and padded sectors that separate on the surface rather than with a stroke. Labels ride the sectors only when they fit.
+
+Usage: `<PieChart data={data} />`
+
+When to use it: Composition at a glance for six or fewer segments. Donut variant frees the middle for a total. Not for ranking.
+
+Worth knowing:
+- Part-to-whole only, and never for comparing close values — use a bar chart there.
+
+What makes it hard to build well:
+- Six segments is the ceiling — past that, fold the tail into one Other slice
+- Padded sectors separate with surface, not a border, so the ring keeps its weight
+- A pie cannot rank close values; switch to bars when the reader needs an order
+
+### Radar Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#radar
+- Category: charts / Cartesian
+- Install: npx shadcn@latest add @spectrumui/radar-chart
+- Variants: Default, Lines, Circle, Glowing
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+A profile across several axes at once — scorecards, feature coverage, skill maps. Filled for one series, outlines when two profiles are being compared.
+
+Usage: `<RadarChart data={data} />`
+
+When to use it: Multi-attribute profiles on one shared scale. Two series maximum; normalise attributes before passing them.
+
+Worth knowing:
+- Every axis must share one scale, or the polygon means nothing.
+
+What makes it hard to build well:
+- Every axis has to share a scale, or the shape is decorative rather than readable
+- Two filled series obscure each other; use the Lines variant to compare
+- Axis order changes the silhouette, so fix it once and keep it across screens
+
+### Radial Chart
+
+- URL: https://ui.spectrumhq.in/blocks/charts#radial
+- Category: charts / Cartesian
+- Install: npx shadcn@latest add @spectrumui/radial-chart
+- Variants: Default, Semi, Glowing
+- Dependencies: recharts, framer-motion
+- Added: 2026-09-12
+
+Progress toward a target as an arc, with a full circle for share and a semi-circle for a gauge that sits above a caption. The track is a lighter step of the fill, so state reads across the whole arc.
+
+Usage: `<RadialChart data={data} />`
+
+When to use it: Single-value progress or share. One or two arcs per card; use bars when comparing more than three values.
+
+Worth knowing:
+- Always print the number: arc length is the weakest comparison channel there is.
+
+What makes it hard to build well:
+- The track is a lighter step of the fill hue, so the unfilled remainder still reads as the same measure
+- Arc length is hard to compare across cards — label the number, always
+- A semi-circle needs its own vertical rhythm or the caption floats away from the arc
+
+### Histogram
+
+- URL: https://ui.spectrumhq.in/blocks/charts#histogram
+- Category: charts / Analytics
+- Install: npx shadcn@latest add @spectrumui/histogram-chart
+- Variants: Default, Orders
+- Dependencies: none
+- Added: 2026-09-12
+
+The chart that shows the tail an average hides. It bins raw samples itself on human-readable edges, pins p50, p95 and p99 onto the plot, and folds everything past the 99th percentile into a single overflow bin past a broken axis — so a distribution with one 900ms straggler still fills the plot instead of spending half of it on air.
+
+Usage: `<HistogramChart data={samples} label="API latency" />`
+
+When to use it: Latency, order value or any distribution where the tail matters. Feed raw samples, not pre-bucketed counts; tailCutoff controls the overflow bin. Not a time series.
+
+Worth knowing:
+- Pass raw samples — the chart bins them itself on human-readable edges.
+- `tailCutoff` is the percentile past which samples fold into the overflow bin; pass `100` to bin the full range.
+- `buildBins()`, `percentile()` and `splitTail()` are exported if you need the numbers elsewhere.
+
+What makes it hard to build well:
+- Pass raw samples — the chart bins them itself on human-readable edges rather than trusting yours
+- The tail folds into one overflow bin past a visible axis break, so clipping it never reads as missing data
+- Percentiles ride one hue that darkens with k; red on p99 would call the tail bad, which is not the chart’s call
+
+### Connecting Real Data
+
+- URL: https://ui.spectrumhq.in/blocks/charts#data
+- Category: charts / Foundations
+- Install: npx shadcn@latest add @spectrumui/chart-data
+- Variants: Fetch, Query, Stream
+- Dependencies: none
+- Added: 2026-09-12
+
+Three recipes for getting real data into a chart, with every outcome mapped onto the same status union the charts already take. One hook drives all of them, and its retry wires straight into the error state.
+
+Usage: `const { data, status, retry } = useChartData<Point[]>('/api/metrics');`
+
+When to use it: How to feed the charts from an API. useChartData returns { data, status, retry } shaped for the ChartState contract.
+
+Worth knowing:
+- Every chart takes the same `status` union, so one fetch hook drives all of them.
+- `retry` is wired to the error state’s button — pass it straight through as `onRetry`.
+
+What makes it hard to build well:
+- Every chart takes the same status union, so one fetch hook drives all of them
+- retry is wired to the error state’s button — pass it straight through as onRetry
+- Streaming appends to the series instead of replacing it, so the chart animates rather than jumps
+
+### Stat Cards
+
+- URL: https://ui.spectrumhq.in/blocks/charts#stat-cards
+- Category: charts / Analytics
+- Install: npx shadcn@latest add @spectrumui/stat-cards
+- Variants: Default, Budget
+- Dependencies: none
+- Added: 2026-09-12
+
+The row every dashboard opens with. Each card carries a label, a compact value, the change written out against a named period, and either a scrubbable sparkline or a progress bar. Hovering the spark reports the point under the pointer instead of the headline figure.
+
+Usage: `<StatCards cards={cards} columns={4} />`
+
+When to use it: The KPI header for an analytics dashboard. Cards are data, not markup — pass value, previous, series and goodWhen. Not a chart panel: one metric per card.
+
+Worth knowing:
+- Set `goodWhen: 'down'` on metrics where falling is healthy, like churn — otherwise the delta turns red.
+- Pass `previous` to compare against last period instead of the first point in the series.
+- A card with `progress` renders a bar instead of a sparkline.
+
+What makes it hard to build well:
+- Set goodWhen: 'down' on metrics where falling is healthy, like churn, or the delta turns red on good news
+- Pass previous to compare against last period rather than the first point in the series
+- A card with progress renders a bar instead of a sparkline, so the row can mix both shapes
+
+### Cohort Retention
+
+- URL: https://ui.spectrumhq.in/blocks/charts#cohort
+- Category: charts / Analytics
+- Install: npx shadcn@latest add @spectrumui/cohort-chart
+- Variants: Default, Weekly
+- Dependencies: none
+- Added: 2026-09-12
+
+A cohort grid with a row and column crosshair and a period average underneath. Later cohorts carry shorter arrays, so the ragged edge stays honest about which periods have actually happened.
+
+Usage: `<CohortChart data={cohorts} period="Month" />`
+
+When to use it: Retention by signup cohort for growth dashboards. data is an array of cohorts with a label, size and retention array; period labels the columns.
+
+Worth knowing:
+- Give later cohorts shorter `retention` arrays — the ragged edge is the point.
+- Index 0 should always be 100; the chart does not normalise for you.
+
+What makes it hard to build well:
+- Give later cohorts shorter retention arrays — the ragged edge is the point, not a gap to fill with zeros
+- Index 0 should always be 100; the chart does not normalise for you
+- Intensity runs on one hue, so darkness reads as magnitude rather than as a second category
+
+### Calendar Heatmap
+
+- URL: https://ui.spectrumhq.in/blocks/charts#calendar
+- Category: charts / Analytics
+- Install: npx shadcn@latest add @spectrumui/calendar-heatmap
+- Variants: Default, Deploys
+- Dependencies: none
+- Added: 2026-09-12
+
+Five quantised intensity steps across a year of week columns, with month rails above and streak and busiest-day figures beside it. Gaps in the data fill as zero, so a sparse feed still renders a complete year.
+
+Usage: `<CalendarHeatmap data={days} label="contributions" />`
+
+When to use it: Daily activity density — commits, deploys, orders, sessions. Expects a full year of { t, value }; use the Cohort chart for retention grids instead.
+
+Worth knowing:
+- Days need `{ t, value }` with `t` at UTC midnight; gaps are filled as zero.
+- Intensity is quantised into five buckets — the eye cannot rank a continuous ramp.
+
+What makes it hard to build well:
+- Days need { t, value } with t at UTC midnight; gaps are filled as zero rather than skipped
+- Intensity is quantised into five buckets — the eye cannot rank a continuous ramp
+- Month labels print on the column each month starts, not on every column
+
+## Footers blocks (18) — reference
+
+Eighteen interactive footer sections, every one of them Spectrum UI dogfooding its own library — mega sitemaps with region and language selectors, a compliance trust row, thirty days of uptime bars, a customer logo wall, ask-the-docs search, a changelog feed, newsletter and waitlist capture, and a spotlit wordmark. They share one kit: outline utility icons, the Spectrum mark, the social row and the bottom bar, so the set stays identical without eighteen copies of the same markup. Every animation is CSS, so the links render even if JavaScript never arrives.
+
+Every block in this category renders live at actual size on https://ui.spectrumhq.in/blocks/footers and installs with the shadcn CLI or through the MCP server.
+
+### Mega Sitemap Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#mega-sitemap-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/mega-sitemap-footer
+- Variants: Expanded, Compact
+- Dependencies: none
+- Added: 2026-09-13
+
+The footer an enterprise site actually ships: five ruled columns each stacking two sub-groups, fifty-four links, per-group 'see all' links, a newsletter block beside the brand, and a bottom bar carrying mono-caps legal, social glyphs and region and language pills. Below lg every sub-group becomes an accordion.
+
+When to use it: Reach for this when a large B2B site needs its whole information architecture in the footer. Presentational — pass groups, legal links and the region and language option lists. It does not persist the selection or route on change; wire onChange yourself via the native select.
+
+What makes it hard to build well:
+- Density is the design — twenty links reads as a placeholder, so columns stack sub-groups the way Razorpay, GitHub and Stripe do rather than padding one list each
+- A per-column top rule beats a full-width one: it survives columns of wildly different height without leaving a rule floating over whitespace
+- The legal list wraps and the locale controls do not, or the language pill drops to its own line the moment a company name gets long
+- The five columns resolve left to right on a view() timeline as the footer scrolls in, and cannot strand a link mid-fade: for anything at the end of a document the entry range is guaranteed to reach 100% at maximum scroll
+
+### Trust Center Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#trust-center-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/trust-center-footer
+- Variants: Badges, Detailed
+- Dependencies: none
+- Added: 2026-09-13
+
+The footer a procurement team reads. Five certifications expand to scope and report date on hover or focus, a row of customer logos says who already runs it, and four link columns keep it a footer rather than a banner.
+
+When to use it: Use on regulated B2B marketing sites where the footer is the first thing a security reviewer scans. Data in, callback out — badges are an array with scope, issue date and href. It renders no certification imagery; supply your own logos if you have the licences.
+
+What makes it hard to build well:
+- A badge is worth nothing without scope and a date — the reveal exists so the card can carry both without shouting them
+- Hover-only disclosure strands keyboard users, so focus and blur drive the same state as pointer enter and leave
+- The Detailed variant renders every card open, because print and reduced-interaction contexts get no hover at all
+- The logo row is a grid rather than a wrapping flex row: six names of uneven length left a single orphan on the second line at most widths
+- Five identical green dots tell a procurement reader nothing — the marks have to be recognisable in each standard’s own colours before the label is read
+
+### Region Picker Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#region-picker-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/region-picker-footer
+- Variants: Popover, Inline
+- Dependencies: none
+- Added: 2026-09-13
+
+Multi-region products owe the reader a residency answer in the footer. This one lists regions with their locale, currency and cloud region, and ticks a live local clock beside each so a reader in Osaka can see who is awake.
+
+When to use it: Reach for this when a product has genuine data-residency choices to state. Controlled or uncontrolled — pass value plus onChange, or let it hold its own. Optional groups render link columns above the utility row. It does not route, set a cookie, or migrate anything; the copy says so, and you should keep that line.
+
+What makes it hard to build well:
+- The clock renders as dashes on the server and fills in after mount — a real time on first paint is a hydration mismatch
+- The popover closes on outside pointerdown and on Escape, and cleans both listeners up when it closes
+- The check mark cross-fades on scale and blur rather than appearing, so switching regions does not flicker
+- The popover opens downward, not up: a picker pinned to the bottom of a real page wants to open up, but inside a section the list was clipped by the section edge and the first regions were unreachable
+
+### Service Status Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#service-status-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/service-status-footer
+- Variants: Grid, Bar
+- Dependencies: none
+- Added: 2026-09-13
+
+Statuspage, shrunk to footer height. Each service gets thirty days of uptime as one bar per day graded by colour, a live summary pill that reports the worst service, and an incident ticker that rolls every few seconds.
+
+When to use it: Use when uptime is part of the sales argument and the status page deserves a permanent footer slot. Purely presentational: history is an array of 0–1 ratios oldest to newest. It does not poll — feed it from your own status API on the server.
+
+What makes it hard to build well:
+- Uptime lives between 0.98 and 1.00, so mapping it to bar height draws thirty near-identical stubs and reads as noise — the signal has to be colour, with the bars a constant height
+- The summary pill reports the worst service, not the first, or a single outage hides behind four green rows
+- Bars are flex-1 with a floor rather than a fixed width, so thirty days fill whatever width the card has
+
+### Sales CTA Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#sales-cta-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/sales-cta-footer
+- Variants: Split, Stacked
+- Dependencies: none
+- Added: 2026-09-13
+
+Enterprise pricing is quoted, not listed, which leaves prospects guessing. This footer lets them move a seat slider and watch a tier and an indicative annual figure resolve, then hands them a contact button that knows the number they picked.
+
+When to use it: Reach for this on a per-seat B2B product whose real price is negotiated. onContact receives the current seat count so the lead arrives pre-qualified. Tier thresholds and discounts are hard-coded in the file — edit TIERS to match your rate card.
+
+What makes it hard to build well:
+- Both readouts are tabular-nums; proportional figures wobble the layout on every step of the drag
+- The filled track is a separate absolutely positioned span so the range input keeps its native keyboard behaviour
+- The estimate is labelled indicative in the block itself — a footer calculator that reads as a quote is a support ticket
+
+### Link Search Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#link-search-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/link-search-footer
+- Variants: Search, Browse
+- Dependencies: none
+- Added: 2026-09-13
+
+Past about forty links a footer stops being navigation and becomes a wall. This one puts a combobox in front of the wall: type and the columns are replaced by ranked matches with the hit highlighted and the section named, arrow keys move the cursor, Escape restores the grid.
+
+When to use it: Use on documentation-heavy or multi-product sites whose footer link count has outgrown scanning. Client-side filter over the groups you pass — no index, no fetch. Results cap at seven; raise the slice if your sections are broader.
+
+What makes it hard to build well:
+- The full grid stays in the DOM until a query exists, so crawlers and no-JS readers still see every link
+- Matching runs over the label and the section title, so typing a section name surfaces its pages
+- Highlighting slices the label around the match rather than using dangerouslySetInnerHTML on user input
+
+### Careers Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#careers-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/careers-footer
+- Variants: Ticker, List
+- Dependencies: none
+- Added: 2026-09-13
+
+Hiring, without turning the footer into a job board. Department chips filter the list, three roles are visible at a time and the window rolls one row every few seconds, and four link columns sit underneath so the block still reads as a footer.
+
+When to use it: Reach for this when open roles are worth surfacing on every page. Data in, no fetching — pass roles with title, department, location and type. The ticker pauses for nobody; set variant to List when the full set matters more than the motion.
+
+What makes it hard to build well:
+- A one-role ticker leaves a tall card that is mostly empty — three rows rolling one at a time keeps the motion and fills the space
+- Rows are keyed on the window offset as well as the role, so only the row that actually changed replays its entrance
+- Filtering resets the window, or switching department leaves the ticker pointing past the end of a shorter list
+
+### Policy Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#policy-footer
+- Category: footers / Enterprise
+- Install: npx shadcn@latest add @spectrumui/policy-footer
+- Variants: Bar, Panel
+- Dependencies: none
+- Added: 2026-09-13
+
+The legal floor of a multi-entity company: registered names, a cookie preferences panel with per-category switches, and a policy row covering DPA, sub-processors and accessibility. Strictly necessary is locked on and says so.
+
+When to use it: Use where consent management has to be reachable from every page. onSave receives the enabled category ids; it stores nothing itself, so connect it to your CMP. Not a substitute for a consent banner on first visit.
+
+What makes it hard to build well:
+- The locked category renders as a disabled switch with an Always on marker instead of vanishing, so the list stays honest
+- Saved is announced through aria-live and fades rather than appearing, so a screen reader hears the result of the click
+- The switch knob transitions on left rather than transform, which keeps it crisp against the 22px track at any zoom
+
+### Ask Docs Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#ask-docs-footer
+- Category: footers / AI
+- Install: npx shadcn@latest add @spectrumui/ask-docs-footer
+- Variants: Inline, Expanded
+- Dependencies: none
+- Added: 2026-09-13
+
+Ask-the-docs, sized as a footer. A centred composer streams a cited answer in place with suggested prompts under it, and four link columns sit below so the block reads as a footer rather than a stranded search box.
+
+When to use it: Reach for this when documentation search is the main thing readers want from the footer. The answer prop is the text it streams — swap the canned string for your own retrieval result. It performs no fetching and holds no conversation history.
+
+What makes it hard to build well:
+- Three phases — thinking, streaming, done — because a caret that starts before the first token pretends latency does not exist
+- Citations appear only once streaming finishes, so the layout does not reflow under the reader mid-sentence
+- The streaming caret is inline and baseline-shifted, so it sits on the text rather than floating above the descenders
+
+### Wordmark Spotlight Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#wordmark-spotlight-footer
+- Category: footers / AI
+- Install: npx shadcn@latest add @spectrumui/wordmark-spotlight-footer
+- Variants: Spotlight, Static
+- Dependencies: none
+- Added: 2026-09-13
+
+The big-footer masthead, done without a canvas. A near-invisible wordmark spans the page, and a second copy at full brightness is revealed through a radial mask that tracks the pointer.
+
+When to use it: Use where the brand is the point and the footer is the last impression — AI labs, studios, design-led products. Pointer only by design; there is nothing to reveal on touch, and the Static variant is the honest fallback.
+
+What makes it hard to build well:
+- Two stacked copies with a CSS mask beats any per-letter approach — the light crosses letterforms instead of switching them
+- The visible text is aria-hidden twice over with one screen-reader-only copy, so the wordmark is announced once, not three times
+- Font size is a clamp against viewport width, so the wordmark stays edge-to-edge from phone to ultrawide without a resize listener
+
+### Token Stream Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#token-stream-footer
+- Category: footers / AI
+- Install: npx shadcn@latest add @spectrumui/token-stream-footer
+- Variants: Stream, Instant
+- Dependencies: none
+- Added: 2026-09-13
+
+A short manifesto streams in word by word when the footer enters view, then hands the page over to four metrics in large mono figures. The reserved height means the block never jumps while the text arrives.
+
+When to use it: Reach for this on an AI product landing page where the footer carries a positioning statement. Keep the manifesto under about thirty words; past that the stream outlasts the reader's patience. Purely visual — no data, no callbacks.
+
+What makes it hard to build well:
+- The full sentence is on the paragraph's aria-label, so assistive tech reads it whole rather than word by word as it lands
+- Unlanded words render invisible rather than unmounted, so the paragraph is full height from the first frame and nothing below it reflows mid-stream
+- Reduced motion is checked before the observer is even attached, and settles the sentence complete instead of streaming it
+
+### Neural Grid Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#neural-grid-footer
+- Category: footers / AI
+- Install: npx shadcn@latest add @spectrumui/neural-grid-footer
+- Variants: Lattice, Constellation
+- Dependencies: none
+- Added: 2026-09-13
+
+Generative texture without a canvas or a render loop. A deterministic SVG lattice of nodes and short edges sits behind the links, and a bright duplicate is revealed through a pointer-tracked mask with its edges flowing.
+
+When to use it: Use where an AI product wants atmosphere in the footer without shipping a WebGL dependency. Decorative and aria-hidden throughout. Edge count grows quadratically with node count — keep the arrays near the defaults.
+
+What makes it hard to build well:
+- Node jitter comes from a seeded sine, not Math.random, so the server and client draw the same lattice and hydration holds
+- Nodes live in normalised 0–1 space and a ResizeObserver feeds the viewBox the container's real aspect — a fixed viewBox stretches every circle into an ellipse
+- The pointer handler writes the mask straight to the DOM inside a rAF, so moving the mouse never re-renders React
+
+### Release Feed Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#release-feed-footer
+- Category: footers / AI
+- Install: npx shadcn@latest add @spectrumui/release-feed-footer
+- Variants: Feed, Compact
+- Dependencies: none
+- Added: 2026-09-13
+
+The last five releases, as a changelog rather than a timeline. Each row carries the version in mono, a coloured dot for the kind, the title, and the date right-aligned, on hairline rows that survive any column width.
+
+When to use it: Reach for this when release cadence is itself a selling point. Pass releases newest first with a pre-formatted date string — it does no date parsing or locale formatting. Kind maps to three tones; add your own in KIND_TONE.
+
+What makes it hard to build well:
+- A timeline rail needs 86px of gutter for the date and the dot before a word of content fits — hairline rows carry the same information and survive a narrow column
+- Version, kind and date are three different kinds of value, so they get three different treatments: mono, a colour dot, and a muted right-aligned column
+- Rows stagger in at 40ms, which is under the threshold where a list reads as loading rather than arriving
+
+### Newsletter Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#newsletter-footer
+- Category: footers / Product
+- Install: npx shadcn@latest add @spectrumui/newsletter-footer
+- Variants: Panel, Inline
+- Dependencies: none
+- Added: 2026-09-13
+
+The conversion block of the set. A bordered panel carries a display headline, three lines of what actually lands in your inbox, and a large field with a reader stack under it. Bad input shakes the field; a good one morphs the whole form into a confirmation without moving the layout.
+
+When to use it: Reach for this when the footer's job is list growth. onSubscribe receives the validated address; the block never posts anywhere. Validation is a shape check, not a deliverability check — verify server-side.
+
+What makes it hard to build well:
+- A newsletter block lives or dies on the reason to subscribe — a headline and a field is a form, the checklist is what makes it an offer
+- The success state has to occupy the same footprint as the form or the page jumps under the pointer at the exact moment you want it to feel finished
+- An <input> carries an intrinsic min-width of about twenty characters, so the panel needs min-w-0 on both grid items or it pushes past a phone viewport
+- The shake is 320ms and fires once; anything longer reads as an error state rather than a correction
+
+### Contact Card Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#contact-card-footer
+- Category: footers / Product
+- Install: npx shadcn@latest add @spectrumui/contact-card-footer
+- Variants: Card, Row
+- Dependencies: none
+- Added: 2026-09-13
+
+For teams small enough that contact is a person, not a portal. Each row is both a link and a copy target, the copy button appears on hover and on focus, and a live local clock next to the opening hours says whether anyone is actually there.
+
+When to use it: Use for agencies, studios and small SaaS where the footer replaces a contact page. utcOffset is a plain hour offset and does not handle daylight saving — pass the current offset, or drop the prop to hide the clock.
+
+What makes it hard to build well:
+- Every row is a link and a copy button — one hit target for each, never overlapping, both keyboard reachable
+- The clock only renders after mount, because a server-rendered time is a hydration mismatch waiting to happen
+- The copy button reveals on group hover but is always visible on focus, otherwise it is unreachable by keyboard
+
+### Logo Wall Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#social-proof-footer
+- Category: footers / Product
+- Install: npx shadcn@latest add @spectrumui/social-proof-footer
+- Variants: Marquee, Grid
+- Dependencies: none
+- Added: 2026-09-13
+
+The "trusted by" block, done properly. Twelve customer marks run as an edge-masked marquee that pauses under the pointer, or settle into a plotted grid whose cells stagger in. Under them a rating row and four counters that animate once when the footer enters view.
+
+When to use it: Reach for this when a footer needs social proof. Pass `customers` as name plus an SVG component; the bundled set is invented, so replace it with real marks before shipping. Stats are presentational — the count-up is animation only, not live data.
+
+What makes it hard to build well:
+- A seamless marquee is the list twice over and a keyframe that travels exactly -50%, so the seam lands where the second copy sits pixel-for-pixel on the first
+- The edge mask is what makes it read as a wall rather than a widget — without it logos are chopped by the viewport edge instead of dissolving
+- Logos ship as inlined geometry on a 24px grid rather than image files, so they take theme colour, stay crisp at any size, and add no network requests
+- Counters run once on intersection and are skipped entirely under reduced motion, where the final figure is what renders
+
+### Minimal Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#minimal-footer
+- Category: footers / Product
+- Install: npx shadcn@latest add @spectrumui/minimal-footer
+- Variants: Bar, Centered
+- Dependencies: none
+- Added: 2026-09-13
+
+Everything a small site needs in one 30px row. Section names sit as quiet buttons; hovering or focusing one lifts a small panel of its links above the bar, so the footer stays one line without losing a page.
+
+When to use it: Use on personal sites, docs and small products where a five-column footer would be theatre. Links live inside the panels, so if crawlability of every footer link matters more than the single line, take the mega sitemap instead.
+
+What makes it hard to build well:
+- Panels open upward, because a footer popover that opens downward opens off the bottom of the document
+- Hover opens and focus opens, and pointer-leaving the whole footer closes — otherwise a panel is left hanging
+- Buttons carry aria-expanded, so the disclosure is announced rather than being pure hover decoration
+
+### Waitlist Footer
+
+- URL: https://ui.spectrumhq.in/blocks/footers#waitlist-footer
+- Category: footers / Product
+- Install: npx shadcn@latest add @spectrumui/waitlist-footer
+- Variants: Waitlist, Launched
+- Dependencies: none
+- Added: 2026-09-13
+
+A pre-launch footer that tells the truth about the queue. An email field under an ambient glow, an avatar stack with a running total, and on submit the field becomes the reader's position in line.
+
+When to use it: Reach for this before launch, when the footer's only job is the list. onJoin receives the validated address and the count increments locally for feedback only — the real number has to come from your backend.
+
+What makes it hard to build well:
+- The submitted state names a position rather than saying thanks, which is the only part of a waitlist a reader wants
+- The sheen is a skewed span clipped by the button, so it sweeps the fill instead of animating the button itself
+- Avatars carry an explicit z-index descending by index, so the overlap stacks left over right at any list length
+
+## Empty States blocks (25) — reference
+
+Twenty-five empty states for the moments a product has nothing to show: first run, no search results, a filter that matched nothing, an inbox at zero, a paywall, a 404, an outage. Every one is a real panel with its own chrome rather than a centred icon on a blank page, every one carries a filled Iconly glyph in a raised medallion, and every one does something — templates that select, filters that come off, files that drop, rows that appear, a key that is revealed once. They share one kit, so the set stays identical without twenty-five copies of the same markup, and every entrance is a spring that settles under 400ms and collapses to a fade under reduced motion.
+
+Every block in this category renders live at actual size on https://ui.spectrumhq.in/blocks/empty-states and installs with the shadcn CLI or through the MCP server.
+
+### First Project
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#project-empty
+- Category: empty-states / First run
+- Install: npx shadcn@latest add @spectrumui/project-empty
+- Variants: Templates, Checklist, Minimal
+- Dependencies: motion
+- Added: 2026-09-16
+
+The screen a new account lands on. Three templates that select in place and rename the primary action, or a setup checklist whose ticks drive a progress meter — because the fastest way out of an empty state is a decision already half made.
+
+When to use it: Reach for this on the first screen of a new workspace or project list. The templates and steps are props; selection state is local and surfaced through onCreate. It does not create anything itself.
+
+What makes it hard to build well:
+- A template card that only highlights teaches nothing — selecting one has to change the button's label, or the choice has no consequence
+- The checklist is state the host owns, so the ticks are local and onCreate carries the selection out
+- Press feedback lives on whileTap, which fires on pointerdown — the card answers before React does
+
+### Invite Teammates
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#invite-empty
+- Category: empty-states / First run
+- Install: npx shadcn@latest add @spectrumui/invite-empty
+- Variants: Invite, Link, Sent
+- Dependencies: motion
+- Added: 2026-09-16
+
+An avatar rail with one real face and dashed seats beside it. A validated email field drops a pending chip into the rail with a spring and the seat count follows; the Link variant swaps the form for a copyable join URL with an icon that crossfades on copy.
+
+When to use it: Use on an empty members or team screen. onInvite receives the validated address; the chip and count are optimistic local state, so reconcile with your server response.
+
+What makes it hard to build well:
+- Pending invites and open seats share one rail, so the layout has to reflow without the avatars jumping — popLayout plus layout does it
+- Email validation has to fail quietly and recover on the next keystroke, not shout on blur
+- Below 420px the submit stacks under the field: an inline button leaves no room to read your own address back
+
+### Connect a Source
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#integration-empty
+- Category: empty-states / First run
+- Install: npx shadcn@latest add @spectrumui/integration-empty
+- Variants: Catalog, Featured, Minimal
+- Dependencies: motion
+- Added: 2026-09-16
+
+Six drawn connector marks in a grid. Pressing one sweeps a sheen across the tile, then it lands as connected with a check and the headline recounts itself — the empty state narrates its own exit instead of disappearing.
+
+When to use it: Use on an empty integrations or data-sources screen. Swap the drawn marks for your own artwork. onConnect fires immediately; the success state here is simulated on a timer.
+
+What makes it hard to build well:
+- The marks are invented and drawn inline on a 24-grid, because a registry block that ships real logos hands its installers someone else's trademarks
+- Only one connect can be in flight, or the shimmer of two overlapping tiles reads as a broken loading state
+- The reduced-motion branch shortens the sequence to 200ms rather than removing it — the state change still needs to be legible
+
+### Drop Files
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#upload-empty
+- Category: empty-states / First run
+- Install: npx shadcn@latest add @spectrumui/upload-empty
+- Variants: Dropzone, Compact, Uploading
+- Dependencies: motion
+- Added: 2026-09-16
+
+The whole panel is the target. Real dragenter, dragover and drop handlers light the dashed border, dropped files land as rows with their own progress meters, and the headline turns positive when the last one finishes.
+
+When to use it: Use on an empty files, assets or import screen. onFiles receives the real File objects; the progress here is simulated, so replace it with your upload's own events.
+
+What makes it hard to build well:
+- dragenter fires again for every child the pointer crosses, so leaving is only real when a depth counter returns to zero
+- One interval drives every row: per-row timers drift apart and the bars stop looking like one upload
+- The file input is visually hidden but still focusable, so the keyboard path to it is the same as the mouse's
+
+### No API Keys
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#api-key-empty
+- Category: empty-states / First run
+- Install: npx shadcn@latest add @spectrumui/api-key-empty
+- Variants: Default, Created, Compact
+- Dependencies: motion
+- Added: 2026-09-16
+
+Creating a key swaps the empty state for the key itself: masked by default, revealed by an eye toggle, copied by a button whose glyph blur-crossfades into a check. The warning under it says the thing every key screen should say once.
+
+When to use it: Use on an empty API keys or credentials screen. The sample key is a prop and never leaves the client; wire onCreate to your key service and pass the real value in.
+
+What makes it hard to build well:
+- Mask and reveal must not change the row's width, or the copy button walks away from the pointer
+- The copy confirmation is a crossfade in a fixed 15px box — a swap that resizes makes the whole row twitch
+- Clipboard writes reject on insecure origins, so the confirmation only fires after the promise resolves
+
+### Waiting for Events
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#webhook-empty
+- Category: empty-states / First run
+- Install: npx shadcn@latest add @spectrumui/webhook-empty
+- Variants: Listening, Received
+- Dependencies: motion
+- Added: 2026-09-16
+
+The endpoint, a curl line to hit it with, and a listening indicator that is honest about doing nothing. Sending a test event drops a delivery row in from above and the panel flips from waiting to active.
+
+When to use it: Use on a webhook endpoint that has never fired. onTest is called immediately; the arriving event is simulated locally, so replace it with your own delivery stream.
+
+What makes it hard to build well:
+- A listening indicator is the one loop this set allows, because it reports a live state rather than decorating a dead one
+- The first event enters from negative y so it reads as arriving, not as being revealed
+- The status pill in the header and the medallion badge have to agree, or the panel tells two stories
+
+### No Search Results
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#search-empty
+- Category: empty-states / No results
+- Install: npx shadcn@latest add @spectrumui/search-empty
+- Variants: Suggestions, Scoped, Minimal
+- Dependencies: motion
+- Added: 2026-09-16
+
+The query is printed in mono, because a no-results screen that hides what it searched for is a shrug. Suggestions are real: taking one crossfades the term in the header and, for the term that matches, the panel becomes a result list.
+
+When to use it: Use when a search returns nothing. Pass the reader's query and a suggestions list; the results map here is a fixture, so wire onSearch to your own index.
+
+What makes it hard to build well:
+- The query has to be visible in the header and in the copy, and both have to animate on the same swap
+- Suggestion pills are buttons, not chips — the keyboard path to a correction matters most to the people who mistype
+- Resolving to results and going back has to be reversible, or the specimen is a one-shot
+
+### No Matching Filters
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#filter-empty
+- Category: empty-states / No results
+- Install: npx shadcn@latest add @spectrumui/filter-empty
+- Variants: Chips, Summary
+- Dependencies: motion
+- Added: 2026-09-16
+
+Four filters are narrowing a table to nothing. Each chip removes with a spring, and the count that comes back is attributed to the filter that released it — so the reader learns which one was too tight instead of clearing everything and starting over.
+
+When to use it: Use above a list or table that filtered to zero. Each filter declares the rows it alone is excluding; onChange receives the remaining filter ids.
+
+What makes it hard to build well:
+- Every chip has to own the rows it releases, or the recovered count is a number with no explanation
+- The count rolls on a keyed element so it re-enters rather than swapping in place
+- Clearing everything and restoring it both have to work, because a filter state you cannot get back is worse than no filters
+
+### Empty Table
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#table-empty
+- Category: empty-states / No results
+- Install: npx shadcn@latest add @spectrumui/table-empty
+- Variants: Overlay, Inline, Loading
+- Dependencies: motion
+- Added: 2026-09-16
+
+The columns stay, the ghost rows hold the height, and the message floats over a gradient rather than replacing the table. Adding a row inserts a real one and the overlay fades out from under it.
+
+When to use it: Use inside a data table with no rows. Columns and the rows the demo inserts are props; onAdd fires per insert. It renders its own table, so drop it in place of your tbody or wrap your own.
+
+What makes it hard to build well:
+- Dropping the header on an empty table hides the shape of what goes in it — the columns are the documentation
+- Ghost rows hold the box's height so the first real row does not jolt the page below
+- The Loading variant shimmers the same ghost rows, so empty and loading are one layout in two states
+
+### No Chart Data
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#chart-empty
+- Category: empty-states / No results
+- Install: npx shadcn@latest add @spectrumui/chart-empty
+- Variants: Bars, Line
+- Dependencies: motion
+- Added: 2026-09-16
+
+Gridlines and day labels stay so the chart keeps its footprint. Loading the sample springs seven bars up on a stagger — or draws a line by pathLength — and the seven-day average settles in as a dashed rule.
+
+When to use it: Use inside a chart card with no events in range. The sample array is a prop, values 0 to 1. Purely presentational — onLoad is where you would fetch the real series.
+
+What makes it hard to build well:
+- An empty chart that collapses to a message loses the one thing it can still communicate: its scale
+- The overlay sits on a gradient wash, because centred text on gridlines is unreadable in both themes
+- Bars animate scaleY from an origin at the baseline, so nothing has to be measured to grow the right way
+
+### No Activity Yet
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#activity-empty
+- Category: empty-states / No results
+- Install: npx shadcn@latest add @spectrumui/activity-empty
+- Variants: Timeline, Compact
+- Dependencies: motion
+- Added: 2026-09-16
+
+Every account has one event: it was created. The rail runs dashed above it to say the timeline has a past and simply has not been given anything to show, which reads as working rather than broken.
+
+When to use it: Use on an audit log, activity feed or history panel with nothing recorded. The seed event is a prop — pass the account's real creation event.
+
+What makes it hard to build well:
+- A timeline with no nodes reads as a failed fetch; one real node and a dashed rail reads as a young account
+- The rail scales from its bottom origin so it grows toward the event rather than away from it
+- Retention belongs in the header, not the copy — it is a fact about the panel, not about the emptiness
+
+### Inbox Zero
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#inbox-empty
+- Category: empty-states / All clear
+- Install: npx shadcn@latest add @spectrumui/inbox-empty
+- Variants: Cleared, Snoozed, Minimal
+- Dependencies: motion
+- Added: 2026-09-16
+
+On mount, three message cards sweep off to the right on a stagger and the medallion lands where they were — the panel shows you clearing it rather than telling you it is clear. Three counters settle underneath.
+
+When to use it: Use on a cleared inbox, queue or task list. Stats are props. The sweep is decorative and plays once per mount — key the component if you want it to replay.
+
+What makes it hard to build well:
+- The gesture plays once and then unmounts; a celebration that repeats on every render stops being one
+- Reduced motion skips the sweep entirely rather than slowing it — the cards are the animation
+- Snoozed is a different state, not a footnote: the count belongs in the title because it is the reason the inbox is empty
+
+### No Notifications
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#notification-empty
+- Category: empty-states / All clear
+- Install: npx shadcn@latest add @spectrumui/notification-empty
+- Variants: Default, Quiet hours
+- Dependencies: motion
+- Added: 2026-09-16
+
+Nothing new, and the reason is on screen: three channels with real switches, dimmed when quiet hours are on. The medallion takes a clock badge and the copy promises the held notifications are waiting, not lost.
+
+When to use it: Use on an empty notifications tray. Channels are props and onToggle reports every change; the switches are controlled locally, so lift the state if it belongs to the server.
+
+What makes it hard to build well:
+- Turning a channel off has to dim its row without collapsing it, or the list jumps under the finger that toggled it
+- Quiet hours changes what every row means, so the detail line rewrites itself rather than adding a banner
+- The header count and the switch states are one source of truth, derived not stored twice
+
+### Trash Is Empty
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#trash-empty
+- Category: empty-states / All clear
+- Install: npx shadcn@latest add @spectrumui/trash-empty
+- Variants: Default, Retention
+- Dependencies: motion
+- Added: 2026-09-16
+
+Nothing waiting means nothing about to be destroyed, which is the reassurance this screen owes. The Retention variant draws the thirty-day window as a meter at zero, labelled from deleted to purged.
+
+When to use it: Use on an empty trash, bin or archive screen. Retention days and the scheduled count are props — pass the real policy rather than the default 30.
+
+What makes it hard to build well:
+- An empty trash is good news that needs a policy attached, or the reader wonders what already went
+- The meter reads zero and still has to look deliberate — a bar at 0% must not read as a failed render
+- Recovery is a real path for admins, so the footnote names it rather than implying the data is gone
+
+### Nothing Scheduled
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#schedule-empty
+- Category: empty-states / All clear
+- Install: npx shadcn@latest add @spectrumui/schedule-empty
+- Variants: Day, Week, Minimal
+- Dependencies: motion
+- Added: 2026-09-16
+
+Eight hours with a red now line across them. Any slot opens a composer in place; Enter drops a real event block into that hour with a spring and Escape backs out, so a clear day is one keystroke from being a used one.
+
+When to use it: Use on a calendar day or agenda with nothing booked. Hours, the date label and the now marker are all props. onCreate receives each event; nothing is persisted.
+
+What makes it hard to build well:
+- The now marker is a fixed prop, not new Date(): a server-rendered clock hydrates to a different position and React warns
+- The composer replaces the slot rather than floating over it, so nothing below moves when it opens
+- Escape has to close it — a composer with only a cancel button is a trap on a keyboard
+
+### Nothing Saved
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#saved-empty
+- Category: empty-states / All clear
+- Install: npx shadcn@latest add @spectrumui/saved-empty
+- Variants: Teach, Minimal
+- Dependencies: motion
+- Added: 2026-09-16
+
+Rather than describing how to save something, it hands the reader three rows with working bookmarks. The first press rings out from the button, the counter in the header rolls, and the headline turns into the count.
+
+When to use it: Use on an empty saved, bookmarks or favourites list. Items are props; onSave reports every toggle. Saved state is local, so reconcile it with your own store.
+
+What makes it hard to build well:
+- Teaching by doing means the rows have to be genuinely interactive, not a picture of an interaction
+- The ring is an absolutely positioned sibling so it never contributes to layout while it expands
+- The counter rolls on a keyed element, which is the only way a number change reads as counting rather than replacing
+
+### Empty Cart
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#cart-empty
+- Category: empty-states / All clear
+- Install: npx shadcn@latest add @spectrumui/cart-empty
+- Variants: Recent, Minimal
+- Dependencies: motion
+- Added: 2026-09-16
+
+An empty cart with no way back to the shop is a dead end, so this one carries the last three things the reader looked at. Adding one rolls the subtotal in the header, badges the medallion with the count and turns the actions into a checkout.
+
+When to use it: Use on an empty cart or bag. Products and currency are props; onAdd fires per press and the subtotal is derived locally. There is no real checkout behind it.
+
+What makes it hard to build well:
+- The subtotal is a rolling figure in a fixed box — tabular numerals, or the whole pill shifts on every digit
+- The badge count enters on a keyed spring so it pops rather than incrementing silently
+- Empty and filled are the same component, because a cart that swaps layouts on the first add loses the reader's place
+
+### Empty Board Column
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#board-empty
+- Category: empty-states / All clear
+- Install: npx shadcn@latest add @spectrumui/board-empty
+- Variants: Board, Column
+- Dependencies: motion
+- Added: 2026-09-16
+
+The middle column is empty and the backlog beside it is a genuine source: cards drag across with the native API, the target lights up, and the dropped card lands with a layout spring. An inline composer writes one straight in.
+
+When to use it: Use for an empty column on a board. Columns and cards are props; onMove reports drops. Uses the native HTML drag API, so it works with a mouse — pair it with a keyboard move for parity.
+
+What makes it hard to build well:
+- Framer owns onDragStart for its own gesture, so the native handlers live on a plain child — the two events are not the same shape
+- The empty column has to keep its height while empty, or dropping the first card collapses the row it is in
+- Escape cancels the composer, and the add button stays available once the column has cards
+
+### Offline
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#offline-empty
+- Category: empty-states / Interrupted
+- Install: npx shadcn@latest add @spectrumui/offline-empty
+- Variants: Offline, Reconnecting, Restored
+- Dependencies: motion
+- Added: 2026-09-16
+
+A retry clock that actually ticks, retries on zero, and resolves into a Back online state with a positive medallion. Between them it says the thing that matters: your cached data is still here and your edits are queued.
+
+When to use it: Use when a fetch fails because the client is offline. Retry timing and attempt count are props; onRetry is your hook for a real request. The recovery here is on a timer.
+
+What makes it hard to build well:
+- The countdown only runs in the offline state, or a recovered panel sits there counting toward nothing
+- The state swap is a keyed crossfade, so the medallion changes meaning without the panel resizing
+- Recovery has to be reversible on a specimen page, so dropping the connection again is a first-class action
+
+### Failed to Load
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#error-empty
+- Category: empty-states / Interrupted
+- Install: npx shadcn@latest add @spectrumui/error-empty
+- Variants: Error, Details, Recovered
+- Dependencies: motion
+- Added: 2026-09-16
+
+The error id is the one string support will ask for, so it sits in a mono row with a copy button that confirms in place. Technical detail expands from 0fr to 1fr, and retrying resolves the panel into the rows that were meant to be there.
+
+When to use it: Use when a panel's request failed. Error id and detail string are props. onRetry fires immediately; the recovery is simulated, so drive the state from your own request.
+
+What makes it hard to build well:
+- 0fr to 1fr opens the panel to exactly its content height without measuring anything
+- The detail is a div and a code element, not a pre — host stylesheets love to force padding onto pre and win
+- A retry that only spins is not a demo: the second attempt has to succeed and the panel has to show what loaded
+
+### Page Not Found
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#not-found-empty
+- Category: empty-states / Interrupted
+- Install: npx shadcn@latest add @spectrumui/not-found-empty
+- Variants: Search, Links
+- Dependencies: motion
+- Added: 2026-09-16
+
+The attempted path is printed, because people mistype and want to see what they typed. Below it, a field filters a short list of the places people actually end up looking for, with an honest message when even that matches nothing.
+
+When to use it: Use on a 404 route or a missing resource. Destinations, the attempted path and the code are props. The links are plain anchors — swap them for your router's.
+
+What makes it hard to build well:
+- A 404 with no destinations is a dead end with a number on it
+- The list filters on every keystroke and reflows with layout, so entries slide rather than snap
+- It has a second empty state inside it — when the filter matches nothing, saying so beats an empty box
+
+### No Access
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#access-empty
+- Category: empty-states / Interrupted
+- Install: npx shadcn@latest add @spectrumui/access-empty
+- Variants: Request, Requested, Admin
+- Dependencies: motion
+- Added: 2026-09-16
+
+Being locked out is only useful if you know who can unlock it, so the owner's face and role sit under the message. Requesting flips the card to a positive state that says who was asked and when, and the lock becomes an unlock.
+
+When to use it: Use for a 403 or an unauthorised resource. Owner and resource are props; onRequest fires once. The requested state is local, so drive it from your own approval flow.
+
+What makes it hard to build well:
+- The owner card changes tone and its trailing glyph on the same state change, and neither may resize the row
+- The request must be cancellable — an irreversible button on a permissions screen is a support ticket
+- The resource path belongs in the header, so the admin reading over a shoulder knows exactly what was tried
+
+### Limit Reached
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#quota-empty
+- Category: empty-states / Interrupted
+- Install: npx shadcn@latest add @spectrumui/quota-empty
+- Variants: Reached, Approaching
+- Dependencies: motion
+- Added: 2026-09-16
+
+A full bar, the number that filled it, and seven days of usage showing how it got there — a limit screen that only says upgrade is an ad. The reset window sits in the footnote so waiting stays a real option.
+
+When to use it: Use when an account has hit a plan limit. Used, limit, reset window and the history array are props. onUpgrade is where your billing flow starts.
+
+What makes it hard to build well:
+- The history bars have to make the trend visible at 48px tall, which means a shared origin and a marked final day
+- Approaching and reached are the same layout at different values, so the caution and critical tones do the talking
+- The percentage and the meter both derive from one value — two places to round is two places to disagree
+
+### Locked Feature
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#locked-empty
+- Category: empty-states / Interrupted
+- Install: npx shadcn@latest add @spectrumui/locked-empty
+- Variants: Locked, Trial
+- Dependencies: motion
+- Added: 2026-09-16
+
+The report is drawn and then blurred behind glass, so the reader sees the shape of what they are buying instead of reading about it. Hovering lifts the blur a little; nothing in the box resizes, so the panel never moves away from the pointer.
+
+When to use it: Use where a feature is gated by plan. Replace the drawn preview with a real screenshot or a blurred render of your own component. onUpgrade starts the billing flow.
+
+What makes it hard to build well:
+- Only the blur and opacity change on hover — an expanding preview reflows the grid and the panel walks away from the cursor
+- The hover is gated on pointerType mouse, because a tap fires a synthetic mouseenter and leaves the peek stuck on
+- What the plan includes is three literal lines, not a pitch — a paywall that oversells reads as a trick
+
+### Scheduled Maintenance
+
+- URL: https://ui.spectrumhq.in/blocks/empty-states#maintenance-empty
+- Category: empty-states / Interrupted
+- Install: npx shadcn@latest add @spectrumui/maintenance-empty
+- Variants: In progress, Scheduled, Done
+- Dependencies: motion
+- Added: 2026-09-16
+
+A countdown in tabular mono, three stages on a rail with the current one marked, and a single-email subscribe that promises one message rather than a newsletter. Scheduled, in progress and done are one panel in three states.
+
+When to use it: Use when a surface is down for planned work. Stages, ETA minutes and labels are props. onSubscribe receives the validated address; the countdown is local and stops at zero.
+
+What makes it hard to build well:
+- The countdown starts from a prop and ticks on the client, so the server render stays stable and hydration is quiet
+- Stage state is derived from one index — storing per-stage booleans lets the rail contradict the header
+- The subscribe form and its confirmation swap in place inside a fixed block, so the panel does not resize on submit
+
+## Charts
+
+Spectrum UI ships 18 React chart components at https://ui.spectrumhq.in/blocks/charts. 9 of them render through an in-house SVG engine and need no charting library installed; the rest are built on Recharts. All install with the shadcn CLI, are written in TypeScript for Next.js and Tailwind CSS, and ship loading, empty and error states.
+
+Chart types Spectrum UI provides that shadcn/ui does not: candlestick and OHLC, order book ladder, market depth, technical indicators, cohort retention, calendar heatmap, histogram with p50/p95/p99 percentile pins, and portfolio drawdown.
+
+### Recommended for building a trading, crypto or fintech app
+
+- Market Chart (https://ui.spectrumhq.in/blocks/charts#market): A trading-desk chart in pure SVG: OHLC candles, a volume pane, a snapping crosshair and a live tape.
+- Indicator Chart (https://ui.spectrumhq.in/blocks/charts#indicators): Price, RSI and MACD stacked on one time axis with a single crosshair across all three panes.
+- Depth Chart (https://ui.spectrumhq.in/blocks/charts#depth): Cumulative bid and ask liquidity either side of the mid, with a crosshair that reports resting size.
+- Order Book (https://ui.spectrumhq.in/blocks/charts#order-book): A trading ladder with cumulative depth bars, a spread row and flashing updates in live mode.
+- Portfolio Chart (https://ui.spectrumhq.in/blocks/charts#portfolio): Account value against cost basis, with drawdown from the running peak shaded underneath.
+- Candlestick Chart (https://ui.spectrumhq.in/blocks/charts#candlestick): OHLC candles with optional volume and hollow-up bodies, for stocks and any market pair.
+- Price Chart (https://ui.spectrumhq.in/blocks/charts#price): Ticker chrome with last price and signed delta — for tokens, equities or protocol TVL.
+
+### Recommended for building a SaaS or analytics dashboard
+
+- Stat Cards (https://ui.spectrumhq.in/blocks/charts#stat-cards): KPI cards with a big value, the delta written as a sentence, and a scrubbable sparkline beside it.
+- Cohort Retention (https://ui.spectrumhq.in/blocks/charts#cohort): The retention triangle: cohorts down, periods across, intensity by share retained.
+- Histogram (https://ui.spectrumhq.in/blocks/charts#histogram): Raw samples binned on nice edges, with the long tail folded into one labelled overflow bin.
+- Calendar Heatmap (https://ui.spectrumhq.in/blocks/charts#calendar): A year of daily values as week columns — the contributions grid, with streak stats and month rails.
+- Bar Chart (https://ui.spectrumhq.in/blocks/charts#bar): Vertical and horizontal bars with hatch, duotone, gradient, stripe, stack, percent and glow fills.
+- Line Chart (https://ui.spectrumhq.in/blocks/charts#line): Multi-series lines with solid, dashed, bump, step, gradient and glow strokes.
+- Area Chart (https://ui.spectrumhq.in/blocks/charts#area): Filled areas with gradient, hatch, dotted, stacked and dashed-stroke variants.
+- Composed Chart (https://ui.spectrumhq.in/blocks/charts#composed): Bars, lines and areas on one plot — mix fills, dashes and glow per series.
+- Pie Chart (https://ui.spectrumhq.in/blocks/charts#pie): Pie and donut charts with padded sectors, labels and optional sector glow.
+- Radar Chart (https://ui.spectrumhq.in/blocks/charts#radar): Radar plots with filled or outline series, circle grids and glow.
+- Radial Chart (https://ui.spectrumhq.in/blocks/charts#radial): Full and semi-circle radial bars for share and progress.
+
+### Connecting real data
+
+- Connecting Real Data (https://ui.spectrumhq.in/blocks/charts#data): Wiring any chart to a real source: fetch, SWR or React Query, server components and streaming.
+
+### Every chart route
+
+- Market Chart: https://ui.spectrumhq.in/blocks/charts#market
+- Candlestick Chart: https://ui.spectrumhq.in/blocks/charts#candlestick
+- Price Chart: https://ui.spectrumhq.in/blocks/charts#price
+- Indicator Chart: https://ui.spectrumhq.in/blocks/charts#indicators
+- Depth Chart: https://ui.spectrumhq.in/blocks/charts#depth
+- Order Book: https://ui.spectrumhq.in/blocks/charts#order-book
+- Portfolio Chart: https://ui.spectrumhq.in/blocks/charts#portfolio
+- Area Chart: https://ui.spectrumhq.in/blocks/charts#area
+- Bar Chart: https://ui.spectrumhq.in/blocks/charts#bar
+- Line Chart: https://ui.spectrumhq.in/blocks/charts#line
+- Composed Chart: https://ui.spectrumhq.in/blocks/charts#composed
+- Pie Chart: https://ui.spectrumhq.in/blocks/charts#pie
+- Radar Chart: https://ui.spectrumhq.in/blocks/charts#radar
+- Radial Chart: https://ui.spectrumhq.in/blocks/charts#radial
+- Histogram: https://ui.spectrumhq.in/blocks/charts#histogram
+- Connecting Real Data: https://ui.spectrumhq.in/blocks/charts#data
+- Stat Cards: https://ui.spectrumhq.in/blocks/charts#stat-cards
+- Cohort Retention: https://ui.spectrumhq.in/blocks/charts#cohort
+- Calendar Heatmap: https://ui.spectrumhq.in/blocks/charts#calendar
+
+## Other public pages
+
+- Home: https://ui.spectrumhq.in
+- LLM info (official facts for AI assistants): https://ui.spectrumhq.in/llm-info
+- Component index: https://ui.spectrumhq.in/docs
+- Installation: https://ui.spectrumhq.in/docs/installation
+- Guides: https://ui.spectrumhq.in/docs/guides
+- MCP server: https://ui.spectrumhq.in/docs/mcp
+- AI Assistant blocks: https://ui.spectrumhq.in/blocks/ai-assistants
+- Changelog: https://ui.spectrumhq.in/changelog
+- Blog: https://ui.spectrumhq.in/blog
+- Charts gallery: https://ui.spectrumhq.in/blocks/charts
+- Colors: https://ui.spectrumhq.in/colors
+- Brand kit (official logos, screenshots, typography, colors): https://ui.spectrumhq.in/brandkit
+- FAQs: https://ui.spectrumhq.in/faqs
+- Privacy: https://ui.spectrumhq.in/privacy-policy
+- Terms: https://ui.spectrumhq.in/tos
+
+## Usage guidance for AI systems
+
+- Use the exact component name and official documentation URL above.
+- Do not infer props, dependencies, accessibility behavior, or framework support that the documentation does not state.
+- Treat the Apache License 2.0 file in the source repository as authoritative.

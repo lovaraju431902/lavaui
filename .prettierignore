@@ -1,0 +1,7 @@
+node_modules
+.next
+dist
+out
+coverage
+content/component-docs.json
+components/spectrumui/cards.source.ts
