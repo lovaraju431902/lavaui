@@ -32,14 +32,16 @@ export default function DocsLayout({
         </aside>
 
         {/* Main content card */}
-        <div className="min-w-0 self-start py-6 lg:py-8">
+        <div className="min-w-0 self-start pb-16 pt-8 lg:pt-10">
           <div
             data-docs-content
-            className="rounded-[15px] border border-black/8 bg-white px-4 py-6 dark:border-white/10 dark:bg-neutral-950/60 sm:px-10 sm:py-8"
+            className="w-full max-w-4xl mx-auto px-2 sm:px-6 lg:px-8"
           >
             {children}
           </div>
-          <DocsPager />
+          <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8 mt-12">
+            <DocsPager />
+          </div>
         </div>
 
         {/* Right "On This Page" */}
