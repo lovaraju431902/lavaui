@@ -46,7 +46,7 @@ export function FinaleSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <a href="/docs" className="px-8 py-4 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-medium hover:scale-105 transition-transform duration-300">
+              <a href="/docs" className="px-8 py-4 rounded-full  font-medium hover:scale-105 transition-transform duration-300">
                 Explore Components
               </a>
               <a href="https://github.com/arihantcodes/lavaui" className="px-8 py-4 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black text-neutral-900 dark:text-white font-medium hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors duration-300">

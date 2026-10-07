@@ -106,7 +106,7 @@ export function RepetitionSection() {
               <div className="flex-1 flex flex-col gap-4">
                 <div className="flex justify-between items-center border-b border-neutral-100 dark:border-neutral-900 pb-2">
                   <motion.div layoutId="input" className={`${tagClasses} w-32`}>Input</motion.div>
-                  <motion.div layoutId="button" className={`${tagClasses} bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 border-neutral-900 dark:border-white px-4`}>Button</motion.div>
+                  <motion.div layoutId="button" className={`${tagClasses}  border-neutral-900 dark:border-white px-4`}>Button</motion.div>
                 </div>
                 
                 {/* Active Card */}
@@ -175,7 +175,7 @@ export function RepetitionSection() {
                     <div className="text-[9px] font-mono text-neutral-450 uppercase">Active Users</div>
                     <div className="text-xl font-bold font-mono tracking-tight text-neutral-900 dark:text-white">1,482</div>
                   </div>
-                  <motion.div layoutId="button" className={`${tagClasses} bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 border-neutral-900 dark:border-white w-full`}>Button</motion.div>
+                  <motion.div layoutId="button" className={`${tagClasses}  border-neutral-900 dark:border-white w-full`}>Button</motion.div>
                 </div>
                 <motion.div layoutId="dialog" className={`${tagClasses} w-full`}>Dialog</motion.div>
               </div>
@@ -216,7 +216,7 @@ export function RepetitionSection() {
                   <div className="space-y-2">
                     <span className="text-[8px] font-mono text-neutral-400 pl-1">Join the waitlist</span>
                     <motion.div layoutId="input" className={`${tagClasses} w-full`}>Input</motion.div>
-                    <motion.div layoutId="button" className={`${tagClasses} w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 border-neutral-900 dark:border-white`}>Button</motion.div>
+                    <motion.div layoutId="button" className={`${tagClasses} w-full  border-neutral-900 dark:border-white`}>Button</motion.div>
                   </div>
                 </div>
               </div>
@@ -252,7 +252,7 @@ export function RepetitionSection() {
                   <motion.div layoutId="input" className={`${tagClasses} flex-1`}>Input</motion.div>
                   <motion.div layoutId="dropdown" className={`${tagClasses} w-10`}>▾</motion.div>
                 </div>
-                <motion.div layoutId="button" className={`${tagClasses} w-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 border-neutral-900 dark:border-white`}>Button</motion.div>
+                <motion.div layoutId="button" className={`${tagClasses} w-full  border-neutral-900 dark:border-white`}>Button</motion.div>
               </div>
             </motion.div>
           )}
@@ -288,7 +288,7 @@ export function RepetitionSection() {
                       <h5 className="text-[10px] font-bold text-neutral-900 dark:text-white">Chrono Classic</h5>
                       <span className="text-[8px] text-neutral-400 font-mono">$1,250</span>
                     </div>
-                    <motion.div layoutId="button" className={`${tagClasses} bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 border-neutral-900 dark:border-white py-1 text-[9px] px-2`}>Button</motion.div>
+                    <motion.div layoutId="button" className={`${tagClasses}  border-neutral-900 dark:border-white py-1 text-[9px] px-2`}>Button</motion.div>
                   </div>
                 </motion.div>
                 

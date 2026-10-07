@@ -38,7 +38,7 @@ export function CtaSection({ className }: CtaSectionProps) {
               window.history.pushState(null, '', '#apply?tier=founding');
               window.dispatchEvent(new CustomEvent('open-sponsor-modal', { detail: { tier: 'founding' } }));
             }}
-            className="px-7 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-medium text-sm hover:scale-105 transition-transform duration-300"
+            className="px-7 py-3 rounded-full  font-medium text-sm hover:scale-105 transition-transform duration-300"
           >
             Become a founding sponsor
           </button>

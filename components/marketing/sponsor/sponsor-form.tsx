@@ -391,7 +391,7 @@ export function SponsorForm({ className }: SponsorFormProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-medium text-xs hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
+                className="w-full py-3 rounded-full  font-medium text-xs hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Providers } from "@/components/providers";
 import { SiteHeader } from "@/components/navbar";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Inter, Spectral } from "next/font/google";
+import { Plus_Jakarta_Sans, Lora, IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 const calSans = localFont({
@@ -13,18 +11,20 @@ const calSans = localFont({
   display: "swap",
 });
 
-const inter = Inter({
+const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
+  variable: "--font-sans",
 });
 
-const spectral = Spectral({
+const fontSerif = Lora({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-spectral",
-  display: "swap",
+  variable: "--font-serif",
+});
+
+const fontMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-mono",
 });
 import Footer from "@/components/footer";
 import "./globals.css";
@@ -127,7 +127,7 @@ export default async function RootLayout({
     // back to the system stack.
     <html
       lang={siteConfig.locale.split("-")[0]}
-      className={`${GeistSans.variable} ${GeistMono.variable} ${inter.variable} ${spectral.variable} ${calSans.variable}`}
+      className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} ${calSans.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>

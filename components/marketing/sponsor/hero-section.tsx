@@ -73,7 +73,7 @@ export function HeroSection({ className }: HeroSectionProps) {
                   new CustomEvent("open-sponsor-modal", { detail: { tier: "founding" } })
                 )
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-sm font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl  text-sm font-medium hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-colors"
             >
               Claim your spot
               <ArrowRight className="w-3.5 h-3.5" />

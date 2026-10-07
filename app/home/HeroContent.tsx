@@ -68,7 +68,7 @@ export function HeroContent() {
                 <Link href="/docs" className="block">
                   <Button
                     variant="outline"
-                    className="h-[44px] rounded-[28px] border-transparent bg-white px-5 font-inter text-[16px] font-normal leading-[22.4px] text-black shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_2px_0px_rgba(0,0,0,0.04),0px_2px_4px_0px_rgba(0,0,0,0.04)] hover:bg-white hover:text-black sm:min-w-[206px] dark:bg-neutral-900 dark:border-neutral-800 dark:text-white dark:hover:text-white"
+                    className="h-[44px] rounded-[28px] border-transparent bg-background px-5 font-inter text-[16px] font-normal leading-[22.4px] text-foreground shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_2px_0px_rgba(0,0,0,0.04),0px_2px_4px_0px_rgba(0,0,0,0.04)] hover:bg-muted sm:min-w-[206px]"
                   >
                     View components
                   </Button>
